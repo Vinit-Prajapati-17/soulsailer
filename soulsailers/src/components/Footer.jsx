@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { MapPin, Phone, Mail, Facebook, Instagram, Twitter, Youtube } from 'lucide-react'
 import './Footer.css'
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -16,7 +18,7 @@ const Footer = () => {
           <div className="footer-grid">
             <div className="footer-brand">
               <Link to="/" className="footer-logo">
-                <img src="/logo.png" alt="SoulSailers - Where Planning Meets Perfection" className="footer-logo-image" />
+                <img src={`${BASE_URL}logo.png`} alt="SoulSailers - Where Planning Meets Perfection" className="footer-logo-image" />
               </Link>
               <p className="footer-desc">
                 Your trusted travel companion for exploring India and the world. 

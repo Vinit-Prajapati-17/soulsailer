@@ -5,6 +5,8 @@ import { Menu, X, Sun, Moon, ChevronDown } from 'lucide-react'
 import { indianStates } from '../data/indianStates'
 import './Navbar.css'
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 const Navbar = ({ theme, toggleTheme }) => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -37,7 +39,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="logo">
-          <img src="/logo.png" alt="SoulSailers - Where Planning Meets Perfection" className="logo-image" />
+          <img src={`${BASE_URL}logo.png`} alt="SoulSailers - Where Planning Meets Perfection" className="logo-image" />
         </Link>
 
         <div className="nav-links">

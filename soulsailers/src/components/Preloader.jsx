@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import "./Preloader.css";
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export default function Preloader({ onComplete }) {
   const [isLoading, setIsLoading] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
@@ -47,11 +49,11 @@ export default function Preloader({ onComplete }) {
             muted
             playsInline
           >
-            <source src="/Preloder.mp4" type="video/mp4" />
+            <source src={`${BASE_URL}Preloder.mp4`} type="video/mp4" />
           </video>
         </div>
         <div className="preloader-logo">
-          <img src="/logo.png" alt="SoulSailers" className="preloader-logo-img" />
+          <img src={`${BASE_URL}logo.png`} alt="SoulSailers" className="preloader-logo-img" />
         </div>
       </div>
     </div>
