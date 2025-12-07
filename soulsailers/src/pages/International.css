@@ -226,6 +226,103 @@
 
 @media (max-width: 576px) {
   .countries-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  /* Smaller Country Cards */
+  .country-card {
+    border-radius: 12px;
+  }
+  
+  .country-image {
+    height: 130px;
+  }
+  
+  .country-continent {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .country-content {
+    padding: 12px;
+  }
+  
+  .country-content h3 {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+  
+  .country-content > p {
+    font-size: 0.75rem;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  
+  .country-meta {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .country-meta span {
+    font-size: 0.7rem;
+  }
+  
+  .country-attractions {
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .country-attractions span {
+    padding: 3px 8px;
+    font-size: 0.65rem;
+  }
+  
+  .explore-link {
+    font-size: 0.75rem;
+  }
+  
+  /* Continents */
+  .continent-card {
+    padding: 12px 16px;
+  }
+  
+  .continent-icon {
+    font-size: 1.3rem;
+  }
+  
+  .continent-card span:last-child {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .countries-grid {
+    gap: 8px;
+  }
+  
+  .country-image {
+    height: 110px;
+  }
+  
+  .country-content {
+    padding: 10px;
+  }
+  
+  .country-content h3 {
+    font-size: 0.8rem;
+  }
+  
+  .country-content > p {
+    font-size: 0.7rem;
+    -webkit-line-clamp: 1;
+  }
+  
+  .country-meta,
+  .country-attractions {
+    display: none;
   }
 }

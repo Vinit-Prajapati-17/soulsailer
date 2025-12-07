@@ -95,4 +95,31 @@
   .preloader-logo-img {
     height: 70px;
   }
+  
+  .preloader-content {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .preloader-video-wrapper {
+    width: 95vw;
+    height: 35vh;
+  }
+
+  .preloader-logo-img {
+    height: 55px;
+  }
+  
+  .preloader-content {
+    gap: 12px;
+  }
+  
+  .preloader-video-wrapper::before {
+    inset: -20px;
+  }
+  
+  .preloader-video-wrapper::after {
+    box-shadow: inset 0 0 40px 20px #1a2840;
+  }
 }

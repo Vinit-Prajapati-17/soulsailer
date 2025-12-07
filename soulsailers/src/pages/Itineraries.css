@@ -1,18 +1,75 @@
+/* Compact Modern Filter Section */
+.itineraries-page .filters-section {
+  background: var(--bg-secondary);
+  padding: 12px 0;
+  position: sticky;
+  top: 70px;
+  z-index: 100;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.itineraries-page .filters-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.itineraries-page .filters-header {
+  display: none;
+}
+
+.itineraries-page .results-count {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.itineraries-page .results-count .count-number {
+  font-weight: 600;
+  color: var(--orange);
+}
+
 /* Duration Filters */
 .duration-filters {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
+  flex: 1;
+}
+
+.itineraries-page .filter-pills {
+  display: flex;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
-.duration-filters svg {
+.itineraries-page .filter-pill {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: var(--bg-card);
   color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
-.duration-filters > span {
-  font-weight: 500;
-  color: var(--text-secondary);
+.itineraries-page .filter-pill:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.itineraries-page .filter-pill.active {
+  background: var(--orange);
+  color: var(--white);
+  border-color: var(--orange);
+}
+
+.quick-info {
+  display: none;
 }
 
 /* State Itineraries */
@@ -282,6 +339,26 @@
   .state-header h2 {
     font-size: 1.5rem;
   }
+
+  .itineraries-page .filters-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .duration-filters {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .itineraries-page .filter-pills {
+    flex-wrap: nowrap;
+  }
+
+  .itineraries-page .results-count {
+    text-align: center;
+  }
 }
 
 @media (max-width: 576px) {
@@ -290,6 +367,80 @@
   }
 
   .itineraries-cta .cta-box {
-    padding: 40px 25px;
+    padding: 30px 20px;
+  }
+  
+  .itineraries-cta .cta-box h2 {
+    font-size: 1.3rem;
+  }
+  
+  .itineraries-cta .cta-box p {
+    font-size: 0.85rem;
+  }
+  
+  /* Smaller Itinerary Cards */
+  .itinerary-card {
+    min-height: 300px;
+    border-radius: 12px;
+  }
+  
+  .itinerary-card .itinerary-header {
+    padding: 14px;
+  }
+  
+  .itinerary-card .days-badge {
+    padding: 4px 10px;
+    font-size: 0.65rem;
+    margin-bottom: 8px;
+  }
+  
+  .itinerary-card .itinerary-header h3 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  
+  .itinerary-card .highlights span {
+    padding: 2px 6px;
+    font-size: 0.6rem;
+  }
+  
+  .itinerary-preview {
+    padding: 12px 14px;
+  }
+  
+  .schedule-item,
+  .day-item {
+    padding: 6px 8px;
+  }
+  
+  .schedule-item .time {
+    font-size: 0.65rem;
+    min-width: 50px;
+  }
+  
+  .schedule-item .activity {
+    font-size: 0.65rem;
+  }
+  
+  .day-item .day-num {
+    font-size: 0.6rem;
+    padding: 2px 6px;
+  }
+  
+  .day-item .day-title {
+    font-size: 0.7rem;
+  }
+  
+  .itinerary-card .itinerary-actions {
+    padding: 10px 14px;
+  }
+  
+  .itinerary-card .itinerary-actions .btn {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+  
+  .state-header h2 {
+    font-size: 1.2rem;
   }
 }

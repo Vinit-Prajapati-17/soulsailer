@@ -57,3 +57,69 @@
 .weather-details .detail svg {
   opacity: 0.8;
 }
+
+
+@media (max-width: 768px) {
+  .weather-widget {
+    padding: 20px;
+    border-radius: 16px;
+    min-width: 180px;
+  }
+  
+  .weather-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .temp {
+    font-size: 1.75rem;
+  }
+  
+  .condition {
+    font-size: 0.85rem;
+  }
+  
+  .weather-city {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+  }
+  
+  .weather-details {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .weather-details .detail {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .weather-widget {
+    padding: 15px;
+    min-width: 160px;
+  }
+  
+  .weather-header {
+    gap: 10px;
+  }
+  
+  .weather-icon svg {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .temp {
+    font-size: 1.5rem;
+  }
+  
+  .weather-details {
+    gap: 12px;
+  }
+  
+  .weather-details .detail {
+    font-size: 0.8rem;
+    gap: 5px;
+  }
+}

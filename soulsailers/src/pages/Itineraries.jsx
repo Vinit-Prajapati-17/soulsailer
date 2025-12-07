@@ -37,21 +37,26 @@ const Itineraries = () => {
         </motion.div>
       </section>
 
-      {/* Filters */}
+      {/* Compact Filter Bar */}
       <section className="filters-section">
         <div className="container">
-          <div className="duration-filters">
-            <Filter size={18} />
-            <span>Duration:</span>
-            {durations.map(duration => (
-              <button
-                key={duration}
-                className={`filter-btn ${selectedDuration === duration ? 'active' : ''}`}
-                onClick={() => setSelectedDuration(duration)}
-              >
-                {duration === 'all' ? 'All' : `${duration} Day${duration !== '1' ? 's' : ''}`}
-              </button>
-            ))}
+          <div className="filters-wrapper">
+            <div className="duration-filters">
+              <div className="filter-pills">
+                {durations.map(duration => (
+                  <button
+                    key={duration}
+                    className={`filter-pill ${selectedDuration === duration ? 'active' : ''}`}
+                    onClick={() => setSelectedDuration(duration)}
+                  >
+                    {duration === 'all' ? 'All' : `${duration} Day${duration !== '1' ? 's' : ''}`}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div className="results-count">
+              <span className="count-number">{filteredItineraries.reduce((acc, s) => acc + s.itineraries.length, 0)}</span> plans
+            </div>
           </div>
         </div>
       </section>

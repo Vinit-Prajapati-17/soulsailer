@@ -36,30 +36,41 @@ const India = () => {
         </motion.div>
       </section>
 
-      {/* Filters */}
+      {/* Compact Filter Bar */}
       <section className="filters-section">
         <div className="container">
-          <div className="filters-bar">
-            <div className="search-filter">
-              <Search size={20} />
-              <input 
-                type="text"
-                placeholder="Search states..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-            <div className="region-filters">
-              <Filter size={18} />
-              {regions.map(region => (
-                <button
-                  key={region}
-                  className={`filter-btn ${selectedRegion === region ? 'active' : ''}`}
-                  onClick={() => setSelectedRegion(region)}
-                >
-                  {region === 'all' ? 'All Regions' : region}
-                </button>
-              ))}
+          <div className="filters-wrapper">
+            <div className="filters-bar">
+              <div className="search-filter">
+                <Search size={16} />
+                <input 
+                  type="text"
+                  placeholder="Search states..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                {searchQuery && (
+                  <button className="clear-search" onClick={() => setSearchQuery('')}>×</button>
+                )}
+              </div>
+              
+              <div className="region-filters">
+                <div className="filter-pills">
+                  {regions.map(region => (
+                    <button
+                      key={region}
+                      className={`filter-pill ${selectedRegion === region ? 'active' : ''}`}
+                      onClick={() => setSelectedRegion(region)}
+                    >
+                      {region === 'all' ? 'All' : region}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="results-count">
+                <span className="count-number">{filteredStates.length}</span> found
+              </div>
             </div>
           </div>
         </div>
@@ -68,9 +79,7 @@ const India = () => {
       {/* States Grid */}
       <section className="states-section section">
         <div className="container">
-          <div className="states-count">
-            Showing {filteredStates.length} destinations
-          </div>
+
           <div className="states-grid">
             {filteredStates.map((state, index) => (
               <motion.div

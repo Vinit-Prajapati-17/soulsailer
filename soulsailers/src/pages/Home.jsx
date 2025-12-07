@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { MapPin, Compass, Calendar, Users, Star, ArrowRight } from 'lucide-react'
+import { MapPin, Compass, Calendar, Users, Star, ArrowRight, Sparkles } from 'lucide-react'
 import { indianStates } from '../data/indianStates'
 import { countries } from '../data/countries'
 import HeroSection from '../components/HeroSection'
-import WorldMapSection from '../components/WorldMapSection'
-import '../components/WorldMapSection.css'
 import './Home.css'
+
+const BASE_URL = import.meta.env.BASE_URL;
 
 const DestinationCard = ({ destination, type }) => {
   return (
@@ -43,8 +43,8 @@ const Home = () => {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Features Section */}
-      <section className="features section">
+      {/* Features Section - Journey Path */}
+      <section className="features">
         <div className="container">
           <motion.div 
             className="section-header"
@@ -53,35 +53,113 @@ const Home = () => {
             viewport={{ once: true }}
           >
             <h2 className="section-title">Why Choose SoulSailers?</h2>
-            <p className="section-subtitle">We make travel planning effortless and exciting</p>
+            <p className="section-subtitle">Your journey to unforgettable travel starts here</p>
           </motion.div>
 
-          <div className="features-grid">
-            {[
-              { icon: <Compass />, title: 'Expert Curation', desc: 'Hand-picked destinations and experiences by travel experts' },
-              { icon: <Calendar />, title: 'Detailed Itineraries', desc: 'Day-by-day plans with timings, tips, and local insights' },
-              { icon: <MapPin />, title: 'Local Experiences', desc: 'Authentic cultural experiences and hidden gems' },
-              { icon: <Users />, title: 'Community Reviews', desc: 'Real traveler reviews and recommendations' },
-            ].map((feature, index) => (
-              <motion.div 
-                key={index}
-                className="feature-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <div className="feature-icon">{feature.icon}</div>
-                <h3>{feature.title}</h3>
-                <p>{feature.desc}</p>
-              </motion.div>
-            ))}
+          <div className="features-journey">
+            {/* Animated connecting path */}
+            <div className="journey-path">
+              <div className="journey-dot"></div>
+            </div>
+
+            <div className="features-items">
+              {[
+                { icon: <Compass size={50} />, title: 'Expert Curation', desc: 'Hand-picked destinations and experiences by travel experts' },
+                { icon: <Calendar size={50} />, title: 'Detailed Itineraries', desc: 'Day-by-day plans with timings, tips, and local insights' },
+                { icon: <MapPin size={50} />, title: 'Local Experiences', desc: 'Authentic cultural experiences and hidden gems' },
+                { icon: <Users size={50} />, title: 'Community Reviews', desc: 'Real traveler reviews and recommendations' },
+              ].map((feature, index) => (
+                <motion.div 
+                  key={index}
+                  className="feature-item"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.2, duration: 0.6 }}
+                >
+                  <div className="feature-node">
+                    <div className="feature-pulse"></div>
+                    <span className="feature-step">0{index + 1}</span>
+                    <div className="feature-node-icon">{feature.icon}</div>
+                  </div>
+                  <div className="feature-content">
+                    <h3>{feature.title}</h3>
+                    <p>{feature.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* World Map Section */}
-      <WorldMapSection />
+      {/* India Showcase Section */}
+      <section className="india-showcase">
+        {/* Animated Background Elements */}
+        <div className="showcase-particles">
+          {[...Array(20)].map((_, i) => (
+            <div key={i} className="particle" style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${15 + Math.random() * 10}s`
+            }} />
+          ))}
+        </div>
+        
+        <div className="showcase-lines">
+          <div className="line line-1"></div>
+          <div className="line line-2"></div>
+          <div className="line line-3"></div>
+        </div>
+
+        <div className="container">
+          <div className="india-showcase-content">
+            {/* Top Text */}
+            <motion.div 
+              className="india-text-top"
+              initial={{ opacity: 0, y: -30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="india-badge">
+                <Sparkles size={16} /> Incredible India
+              </span>
+              <h2>Discover the Soul of <span className="gradient-text">India</span></h2>
+            </motion.div>
+            
+            {/* Center Video */}
+            <motion.div 
+              className="india-video-wrapper"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="video-frame">
+                <div className="frame-corner frame-tl"></div>
+                <div className="frame-corner frame-tr"></div>
+                <div className="frame-corner frame-bl"></div>
+                <div className="frame-corner frame-br"></div>
+                <video 
+                  className="india-showcase-video"
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                >
+                  <source src={`${BASE_URL}video.mp4`} type="video/mp4" />
+                </video>
+                <img 
+                  src={`${BASE_URL}logo.png`} 
+                  alt="SoulSailers" 
+                  className="video-logo-watermark"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* Indian Destinations */}
       <section className="destinations section">
@@ -143,7 +221,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Travel Tips Section */}
+      {/* Travel Tips Section - Bento Grid */}
       <section className="tips section">
         <div className="container">
           <motion.div 
@@ -156,24 +234,28 @@ const Home = () => {
             <p className="section-subtitle">Expert advice for your next adventure</p>
           </motion.div>
 
-          <div className="tips-grid">
+          <div className="tips-bento">
             {[
-              { title: 'Best Time to Visit India', desc: 'October to March offers pleasant weather across most regions', icon: '🌤️' },
+              { title: 'Best Time to Visit India', desc: 'October to March offers pleasant weather across most regions. The winter months are ideal for exploring Rajasthan, Kerala, and Goa, while summer is perfect for hill stations.', icon: '🌤️' },
               { title: 'Budget Planning', desc: 'Plan ₹2000-5000 per day for comfortable travel in India', icon: '💰' },
               { title: 'Packing Essentials', desc: 'Light layers, comfortable shoes, and universal adapter', icon: '🎒' },
-              { title: 'Local Etiquette', desc: 'Remove shoes at temples, dress modestly at religious sites', icon: '🙏' },
+              { title: 'Local Etiquette', desc: 'Remove shoes at temples, dress modestly at religious sites. Always greet with "Namaste" and respect local customs.', icon: '🙏' },
             ].map((tip, index) => (
               <motion.div 
                 key={index}
-                className="tip-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                className="tip-bento"
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.15, duration: 0.5 }}
               >
-                <span className="tip-icon">{tip.icon}</span>
-                <h3>{tip.title}</h3>
-                <p>{tip.desc}</p>
+                <div className="tip-border-glow"></div>
+                <div className="tip-corner-accent"></div>
+                <div className="tip-bento-inner">
+                  <span className="tip-emoji">{tip.icon}</span>
+                  <h3>{tip.title}</h3>
+                  <p>{tip.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>

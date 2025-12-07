@@ -57,6 +57,12 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Ensure scroll to top works on page load */
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -251,6 +257,38 @@ input, textarea {
   }
   
   .section-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 50px 0;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
   }
 }
