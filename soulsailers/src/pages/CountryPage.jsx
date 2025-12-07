@@ -1,7 +1,8 @@
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { MapPin, Calendar, DollarSign, Clock, ArrowLeft, Star, Plane, Camera } from 'lucide-react'
+import { MapPin, Calendar, DollarSign, Clock, ArrowLeft, Plane, Camera } from 'lucide-react'
 import { getCountryById, continents } from '../data/countries'
+import ExpandableCard from '../components/ExpandableCard'
 import './CountryPage.css'
 
 const CountryPage = () => {
@@ -98,21 +99,12 @@ const CountryPage = () => {
               </div>
             </motion.div>
 
-            <motion.div 
-              className="attractions-card"
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3><Star size={20} /> Top Attractions</h3>
-              <ul>
-                {country.attractions.map((attraction, index) => (
-                  <li key={index}>
-                    <span className="attraction-number">{index + 1}</span>
-                    {attraction}
-                  </li>
-                ))}
-              </ul>
+              <ExpandableCard attractions={country.attractions} />
             </motion.div>
           </div>
         </div>

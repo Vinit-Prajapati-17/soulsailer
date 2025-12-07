@@ -79,11 +79,15 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800" alt="Travel" />
-              <div className="story-badge">
-                <Plane size={30} />
-                <span>Since 2019</span>
-              </div>
+              <video 
+                src={`${import.meta.env.BASE_URL}Picture.mp4`}
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="story-video"
+              />
+
             </motion.div>
           </div>
         </div>

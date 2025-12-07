@@ -2,9 +2,10 @@ import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import AIRecommendation from './components/AIRecommendation'
+import SocialButtons from './components/SocialButtons'
 import ScrollToTop from './components/ScrollToTop'
 import Preloader from './components/Preloader'
+import PageLoader from './components/PageLoader'
 import Home from './pages/Home'
 import India from './pages/India'
 import StatePage from './pages/StatePage'
@@ -30,6 +31,7 @@ function App() {
   return (
     <>
       {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
+      {!isLoading && <PageLoader />}
       <div className="app">
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         <main>
@@ -45,7 +47,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
-        <AIRecommendation />
+        <SocialButtons />
         <ScrollToTop />
       </div>
     </>

@@ -23,10 +23,13 @@
   position: relative;
 }
 
-.story-image img {
+.story-image img,
+.story-image video,
+.story-video {
   width: 100%;
   border-radius: 20px;
   box-shadow: var(--shadow-lg);
+  object-fit: cover;
 }
 
 .story-badge {

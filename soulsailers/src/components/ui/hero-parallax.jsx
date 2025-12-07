@@ -158,9 +158,11 @@ export const Header = ({ isMobile }) => {
           fontWeight: 700,
           color: "var(--text-primary)",
           lineHeight: 1.1,
+          opacity: 1,
         }}
       >
-        Explore The World <br />
+        Explore The World With <br />
+        
         <span
           style={{
             background: "linear-gradient(135deg, var(--orange) 0%, #FF8C42 100%)",
@@ -169,7 +171,7 @@ export const Header = ({ isMobile }) => {
             backgroundClip: "text",
           }}
         >
-          With SoulSailers
+                        SoulSailers
         </span>
       </h1>
       <p

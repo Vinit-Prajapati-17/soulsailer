@@ -89,12 +89,14 @@
 }
 
 .country-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   background: var(--bg-card);
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--border-color);
   transition: all var(--transition-normal);
+  height: 480px;
 }
 
 .country-card:hover {
@@ -136,6 +138,9 @@
 
 .country-content {
   padding: 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .country-content h3 {
@@ -156,38 +161,24 @@
   overflow: hidden;
 }
 
-.country-meta {
+.country-info {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  flex-direction: column;
+  gap: 10px;
   margin-bottom: 15px;
 }
 
-.country-meta span {
+.country-info .info-row {
   display: flex;
   align-items: center;
-  gap: 5px;
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-}
-
-.country-meta svg {
-  color: var(--orange);
-}
-
-.country-attractions {
-  display: flex;
-  flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 15px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }
 
-.country-attractions span {
-  padding: 5px 12px;
-  background: var(--bg-secondary);
-  border-radius: 20px;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
+.country-info .info-row svg {
+  color: var(--orange);
+  flex-shrink: 0;
 }
 
 .explore-link {
@@ -198,6 +189,7 @@
   font-weight: 500;
   font-size: 0.9rem;
   transition: gap var(--transition-fast);
+  margin-top: auto;
 }
 
 .country-card:hover .explore-link {
@@ -233,10 +225,12 @@
   /* Smaller Country Cards */
   .country-card {
     border-radius: 12px;
+    height: 300px;
   }
   
   .country-image {
     height: 130px;
+    flex-shrink: 0;
   }
   
   .country-continent {
@@ -262,23 +256,14 @@
     line-height: 1.4;
   }
   
-  .country-meta {
-    gap: 8px;
-    margin-bottom: 8px;
-  }
-  
-  .country-meta span {
-    font-size: 0.7rem;
-  }
-  
-  .country-attractions {
-    gap: 5px;
+  .country-info {
+    gap: 6px;
     margin-bottom: 10px;
   }
   
-  .country-attractions span {
-    padding: 3px 8px;
-    font-size: 0.65rem;
+  .country-info .info-row {
+    font-size: 0.7rem;
+    gap: 5px;
   }
   
   .explore-link {
@@ -304,6 +289,10 @@
     gap: 8px;
   }
   
+  .country-card {
+    height: 260px;
+  }
+  
   .country-image {
     height: 110px;
   }
@@ -321,8 +310,7 @@
     -webkit-line-clamp: 1;
   }
   
-  .country-meta,
-  .country-attractions {
+  .country-info {
     display: none;
   }
 }

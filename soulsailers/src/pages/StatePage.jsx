@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { MapPin, Calendar, Clock, Sun, Camera, Download, ArrowLeft, ChevronRight } from 'lucide-react'
 import { getStateById } from '../data/indianStates'
 import { getItineraryByState } from '../data/itineraries'
+import ExpandableCard from '../components/ExpandableCard'
 import './StatePage.css'
 
 const StatePage = () => {
@@ -99,16 +100,12 @@ const StatePage = () => {
             </motion.div>
 
             <motion.div 
-              className="overview-map"
+              className="overview-attractions"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="map-placeholder">
-                <MapPin size={60} />
-                <p>Interactive Map</p>
-                <span>Coming Soon</span>
-              </div>
+              <ExpandableCard attractions={state.attractions} stateId={state.id} />
             </motion.div>
           </div>
         </div>

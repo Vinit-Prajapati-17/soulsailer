@@ -98,14 +98,15 @@ const International = () => {
                   <div className="country-content">
                     <h3>{country.name}</h3>
                     <p>{country.description}</p>
-                    <div className="country-meta">
-                      <span><Calendar size={14} /> {country.bestTime}</span>
-                      <span><DollarSign size={14} /> {country.costRange}</span>
-                    </div>
-                    <div className="country-attractions">
-                      {country.attractions.slice(0, 3).map((attr, i) => (
-                        <span key={i}>{attr}</span>
-                      ))}
+                    <div className="country-info">
+                      <div className="info-row">
+                        <MapPin size={14} />
+                        <span>{country.capital}</span>
+                      </div>
+                      <div className="info-row">
+                        <Calendar size={14} />
+                        <span>{country.bestTime}</span>
+                      </div>
                     </div>
                     <span className="explore-link">
                       Explore <ArrowRight size={16} />

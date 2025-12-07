@@ -68,9 +68,7 @@ const India = () => {
                 </div>
               </div>
               
-              <div className="results-count">
-                <span className="count-number">{filteredStates.length}</span> found
-              </div>
+
             </div>
           </div>
         </div>
@@ -96,9 +94,15 @@ const India = () => {
                   <div className="state-content">
                     <h3>{state.name}</h3>
                     <p>{state.description}</p>
-                    <div className="state-meta">
-                      <span><MapPin size={14} /> {state.capital}</span>
-                      <span><Calendar size={14} /> {state.bestTime}</span>
+                    <div className="state-info">
+                      <div className="info-row">
+                        <MapPin size={14} />
+                        <span>{state.capital}</span>
+                      </div>
+                      <div className="info-row">
+                        <Calendar size={14} />
+                        <span>{state.bestTime}</span>
+                      </div>
                     </div>
                     <span className="explore-link">
                       Explore <ArrowRight size={16} />

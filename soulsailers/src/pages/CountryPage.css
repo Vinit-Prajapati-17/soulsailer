@@ -76,72 +76,6 @@
   color: var(--orange);
 }
 
-/* Attractions Card */
-.attractions-card {
-  background: var(--bg-card);
-  border-radius: 20px;
-  padding: 30px;
-  border: 1px solid var(--border-color);
-  position: sticky;
-  top: 100px;
-}
-
-.attractions-card h3 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 25px;
-  color: var(--text-primary);
-}
-
-.attractions-card h3 svg {
-  color: var(--orange);
-}
-
-.attractions-card ul {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.attractions-card li {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 15px;
-  background: var(--bg-secondary);
-  border-radius: 12px;
-  color: var(--text-primary);
-  font-weight: 500;
-  transition: all var(--transition-fast);
-}
-
-.attractions-card li:hover {
-  transform: translateX(5px);
-  background: var(--primary-blue);
-  color: var(--white);
-}
-
-.attraction-number {
-  width: 30px;
-  height: 30px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-size: 0.85rem;
-  font-weight: 600;
-  flex-shrink: 0;
-}
-
-.attractions-card li:hover .attraction-number {
-  background: var(--orange);
-}
-
 /* Country Gallery */
 .country-gallery .gallery-grid {
   display: grid;
@@ -231,10 +165,6 @@
 @media (max-width: 992px) {
   .country-hero-content h1 {
     font-size: 3rem;
-  }
-
-  .attractions-card {
-    position: static;
   }
 
   .country-gallery .gallery-grid {

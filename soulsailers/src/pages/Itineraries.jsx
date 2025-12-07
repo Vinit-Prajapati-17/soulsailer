@@ -54,9 +54,7 @@ const Itineraries = () => {
                 ))}
               </div>
             </div>
-            <div className="results-count">
-              <span className="count-number">{filteredItineraries.reduce((acc, s) => acc + s.itineraries.length, 0)}</span> plans
-            </div>
+
           </div>
         </div>
       </section>

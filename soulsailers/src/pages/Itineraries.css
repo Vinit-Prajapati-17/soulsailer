@@ -3,7 +3,7 @@
   background: var(--bg-secondary);
   padding: 12px 0;
   position: sticky;
-  top: 70px;
+  top: 65px;
   z-index: 100;
   border-bottom: 1px solid var(--border-color);
 }
@@ -330,6 +330,10 @@
 }
 
 @media (max-width: 768px) {
+  .itineraries-page .filters-section {
+    top: 50px;
+  }
+
   .state-header {
     flex-direction: column;
     align-items: flex-start;

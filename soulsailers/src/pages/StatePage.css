@@ -146,36 +146,9 @@
   font-size: 0.9rem;
 }
 
-.overview-map {
+.overview-attractions {
   position: sticky;
   top: 100px;
-}
-
-.map-placeholder {
-  background: var(--bg-secondary);
-  border-radius: 20px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 2px dashed var(--border-color);
-  color: var(--text-secondary);
-}
-
-.map-placeholder svg {
-  color: var(--primary-blue);
-  margin-bottom: 15px;
-}
-
-.map-placeholder p {
-  font-weight: 600;
-  font-size: 1.1rem;
-}
-
-.map-placeholder span {
-  font-size: 0.85rem;
-  opacity: 0.7;
 }
 
 
@@ -418,7 +391,7 @@
     grid-template-columns: 1fr;
   }
 
-  .overview-map {
+  .overview-attractions {
     position: static;
   }
 
