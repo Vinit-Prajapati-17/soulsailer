@@ -19,7 +19,7 @@ const StatePage = () => {
     )
   }
 
-  const galleryImages = [
+  const galleryImages = state.gallery || [
     state.image,
     'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600',
     'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600',

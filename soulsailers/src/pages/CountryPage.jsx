@@ -19,11 +19,13 @@ const CountryPage = () => {
 
   const continent = continents.find(c => c.id === country.continent)
 
-  const galleryImages = [
+  const galleryImages = country.gallery || [
     country.image,
     'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600',
     'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600',
     'https://images.unsplash.com/photo-1528181304800-259b08848526?w=600',
+    'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600',
+    'https://images.unsplash.com/photo-1533105079780-92b9be482077?w=600',
   ]
 
   return (
