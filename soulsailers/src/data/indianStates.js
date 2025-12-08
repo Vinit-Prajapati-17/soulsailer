@@ -1,3 +1,5 @@
+const BASE_URL = import.meta.env.BASE_URL;
+
 export const indianStates = [
   // North India
   { 
@@ -6,11 +8,12 @@ export const indianStates = [
     region: 'North', 
     capital: 'Srinagar', 
     bestTime: 'March to October', 
-    image: 'https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800', 
+    image: 'https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800',
+    bannerImage: `${BASE_URL}Banner/Jammu.png`,
     description: 'Paradise on Earth with stunning valleys, lakes, and snow-capped mountains.',
     attractions: ['Srinagar', 'Gulmarg', 'Pahalgam', 'Leh', 'Sonamarg'],
     gallery: [
-      'https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800',
+      `${BASE_URL}Banner/Jammu.png`,
       'https://images.unsplash.com/photo-1566837945700-30057527ade0?w=800',
       'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800',
       'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800',
@@ -24,7 +27,8 @@ export const indianStates = [
     region: 'North', 
     capital: 'Shimla', 
     bestTime: 'March to June', 
-    image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800', 
+    image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800',
+    bannerImage: `${BASE_URL}Banner/himachal.jpg`,
     description: 'Land of gods with beautiful hill stations and adventure sports.',
     attractions: ['Shimla', 'Manali', 'Dharamshala', 'Kasol', 'Spiti Valley'],
     gallery: [
@@ -42,7 +46,8 @@ export const indianStates = [
     region: 'North', 
     capital: 'Chandigarh', 
     bestTime: 'October to March', 
-    image: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=800', 
+    image: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=800',
+    bannerImage: `${BASE_URL}Banner/punjab.jpg`,
     description: 'Land of five rivers, rich culture, and the Golden Temple.',
     attractions: ['Amritsar', 'Chandigarh', 'Ludhiana', 'Patiala', 'Anandpur Sahib'],
     gallery: [
@@ -60,7 +65,8 @@ export const indianStates = [
     region: 'North', 
     capital: 'Dehradun', 
     bestTime: 'March to June', 
-    image: 'https://images.unsplash.com/photo-1585135497273-1a86b09fe70e?w=800', 
+    image: 'https://images.unsplash.com/photo-1585135497273-1a86b09fe70e?w=800',
+    bannerImage: `${BASE_URL}Banner/Uttrakhand.jpg`,
     description: 'Dev Bhoomi - Land of Gods with spiritual sites and Himalayan beauty.',
     attractions: ['Rishikesh', 'Haridwar', 'Nainital', 'Mussoorie', 'Valley of Flowers'],
     gallery: [
@@ -78,7 +84,8 @@ export const indianStates = [
     region: 'North', 
     capital: 'Chandigarh', 
     bestTime: 'October to March', 
-    image: 'https://images.unsplash.com/photo-1623070573483-a6f0d7c71b5e?w=800', 
+    image: 'https://images.unsplash.com/photo-1623070573483-a6f0d7c71b5e?w=800',
+    bannerImage: `${BASE_URL}Banner/Haryana.jpg`,
     description: 'Historical land of Mahabharata with rich cultural heritage.',
     attractions: ['Kurukshetra', 'Panchkula', 'Faridabad', 'Gurgaon', 'Sultanpur Bird Sanctuary'],
     gallery: [
@@ -96,7 +103,8 @@ export const indianStates = [
     region: 'North', 
     capital: 'New Delhi', 
     bestTime: 'October to March', 
-    image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800', 
+    image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800',
+    bannerImage: `${BASE_URL}Banner/Delhi banner.png`,
     description: 'Capital city blending ancient history with modern vibrancy.',
     attractions: ['Red Fort', 'Qutub Minar', 'India Gate', 'Lotus Temple', 'Chandni Chowk'],
     gallery: [
@@ -116,7 +124,8 @@ export const indianStates = [
     region: 'South', 
     capital: 'Thiruvananthapuram', 
     bestTime: 'September to March', 
-    image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800', 
+    image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800',
+    bannerImage: `${BASE_URL}Banner/Kerala.jpg`,
     description: 'God\'s Own Country with backwaters, beaches, and Ayurveda.',
     attractions: ['Alleppey', 'Munnar', 'Kochi', 'Thekkady', 'Kovalam'],
     gallery: [
@@ -134,7 +143,8 @@ export const indianStates = [
     region: 'South', 
     capital: 'Chennai', 
     bestTime: 'November to February', 
-    image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800', 
+    image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800',
+    bannerImage: `${BASE_URL}Banner/Tamil.jpg`,
     description: 'Land of temples, classical arts, and rich Dravidian culture.',
     attractions: ['Chennai', 'Madurai', 'Ooty', 'Mahabalipuram', 'Rameswaram'],
     gallery: [
@@ -152,7 +162,8 @@ export const indianStates = [
     region: 'South', 
     capital: 'Bengaluru', 
     bestTime: 'October to February', 
-    image: 'https://images.unsplash.com/photo-1600100397608-e1f6e66a6e0a?w=800', 
+    image: 'https://images.unsplash.com/photo-1600100397608-e1f6e66a6e0a?w=800',
+    bannerImage: `${BASE_URL}Banner/Karnataka.jpg`,
     description: 'Silicon Valley of India with heritage sites and natural beauty.',
     attractions: ['Bengaluru', 'Mysore', 'Hampi', 'Coorg', 'Gokarna'],
     gallery: [
@@ -170,7 +181,8 @@ export const indianStates = [
     region: 'South', 
     capital: 'Amaravati', 
     bestTime: 'October to February', 
-    image: 'https://images.unsplash.com/photo-1621427638996-d782d7e8c68a?w=800', 
+    image: 'https://images.unsplash.com/photo-1621427638996-d782d7e8c68a?w=800',
+    bannerImage: `${BASE_URL}Banner/Andhra.jpg`,
     description: 'Land of Tirupati and beautiful coastal regions.',
     attractions: ['Tirupati', 'Visakhapatnam', 'Vijayawada', 'Lepakshi', 'Araku Valley'],
     gallery: [
@@ -188,7 +200,8 @@ export const indianStates = [
     region: 'South', 
     capital: 'Hyderabad', 
     bestTime: 'October to February', 
-    image: 'https://images.unsplash.com/photo-1572445271230-a78b5944a659?w=800', 
+    image: 'https://images.unsplash.com/photo-1572445271230-a78b5944a659?w=800',
+    bannerImage: `${BASE_URL}Banner/TL.jpg`,
     description: 'City of Pearls with Charminar and rich Nizami heritage.',
     attractions: ['Hyderabad', 'Charminar', 'Golconda Fort', 'Ramoji Film City', 'Warangal'],
     gallery: [
@@ -208,7 +221,8 @@ export const indianStates = [
     region: 'West', 
     capital: 'Jaipur', 
     bestTime: 'October to March', 
-    image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800', 
+    image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800',
+    bannerImage: `${BASE_URL}Banner/Raj.jpg`,
     description: 'Land of Kings with majestic forts, palaces, and desert landscapes.',
     attractions: ['Jaipur', 'Udaipur', 'Jaisalmer', 'Jodhpur', 'Pushkar'],
     gallery: [
@@ -226,7 +240,8 @@ export const indianStates = [
     region: 'West', 
     capital: 'Gandhinagar', 
     bestTime: 'October to February', 
-    image: 'https://images.unsplash.com/photo-1609948543911-7f86e3f56c4d?w=800', 
+    image: 'https://images.unsplash.com/photo-1609948543911-7f86e3f56c4d?w=800',
+    bannerImage: `${BASE_URL}Banner/Gujrat.jpg`,
     description: 'Land of legends with Gir lions and vibrant culture.',
     attractions: ['Rann of Kutch', 'Gir National Park', 'Somnath Temple', 'Dwarka', 'Statue of Unity', 'Ahmedabad'],
     gallery: [
@@ -244,7 +259,8 @@ export const indianStates = [
     region: 'West', 
     capital: 'Mumbai', 
     bestTime: 'October to February', 
-    image: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800', 
+    image: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800',
+    bannerImage: `${BASE_URL}Banner/Maharashtra.jpg`,
     description: 'Financial capital with beaches, caves, and hill stations.',
     attractions: ['Mumbai', 'Pune', 'Ajanta Caves', 'Ellora Caves', 'Lonavala'],
     gallery: [
@@ -262,7 +278,8 @@ export const indianStates = [
     region: 'West', 
     capital: 'Panaji', 
     bestTime: 'November to February', 
-    image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800', 
+    image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800',
+    bannerImage: `${BASE_URL}Banner/goa.jpg`,
     description: 'Beach paradise with Portuguese heritage and vibrant nightlife.',
     attractions: ['Baga Beach', 'Old Goa', 'Dudhsagar Falls', 'Anjuna Beach', 'Palolem Beach'],
     gallery: [
@@ -282,7 +299,8 @@ export const indianStates = [
     region: 'East', 
     capital: 'Kolkata', 
     bestTime: 'October to March', 
-    image: 'https://images.unsplash.com/photo-1558431382-27e303142255?w=800', 
+    image: 'https://images.unsplash.com/photo-1558431382-27e303142255?w=800',
+    bannerImage: `${BASE_URL}Banner/West.jpg`,
     description: 'Cultural capital with Durga Puja, Darjeeling, and Sundarbans.',
     attractions: ['Kolkata', 'Darjeeling', 'Sundarbans', 'Shantiniketan', 'Digha'],
     gallery: [
@@ -300,7 +318,8 @@ export const indianStates = [
     region: 'East', 
     capital: 'Bhubaneswar', 
     bestTime: 'October to February', 
-    image: 'https://images.unsplash.com/photo-1621996659490-3275b4d0d951?w=800', 
+    image: 'https://images.unsplash.com/photo-1621996659490-3275b4d0d951?w=800',
+    bannerImage: `${BASE_URL}Banner/Or.jpg`,
     description: 'Land of temples with Konark Sun Temple and pristine beaches.',
     attractions: ['Puri', 'Konark', 'Bhubaneswar', 'Chilika Lake', 'Cuttack'],
     gallery: [
@@ -318,7 +337,8 @@ export const indianStates = [
     region: 'East', 
     capital: 'Patna', 
     bestTime: 'October to March', 
-    image: 'https://images.unsplash.com/photo-1591018653367-7d29b4e8f5a9?w=800', 
+    image: 'https://images.unsplash.com/photo-1591018653367-7d29b4e8f5a9?w=800',
+    bannerImage: `${BASE_URL}Banner/Bihar.jpg`,
     description: 'Birthplace of Buddhism with Bodh Gaya and Nalanda.',
     attractions: ['Bodh Gaya', 'Nalanda', 'Patna', 'Rajgir', 'Vaishali'],
     gallery: [
@@ -336,7 +356,8 @@ export const indianStates = [
     region: 'East', 
     capital: 'Ranchi', 
     bestTime: 'October to March', 
-    image: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800', 
+    image: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800',
+    bannerImage: `${BASE_URL}Banner/Jarkhand.jpg`,
     description: 'Land of forests with waterfalls and tribal culture.',
     attractions: ['Ranchi', 'Jamshedpur', 'Deoghar', 'Netarhat', 'Hundru Falls'],
     gallery: [
@@ -356,7 +377,8 @@ export const indianStates = [
     region: 'Central', 
     capital: 'Bhopal', 
     bestTime: 'October to March', 
-    image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800', 
+    image: 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800',
+    bannerImage: `${BASE_URL}Banner/MP.jpg`,
     description: 'Heart of India with Khajuraho, wildlife, and heritage sites.',
     attractions: ['Khajuraho', 'Sanchi', 'Bhopal', 'Orchha', 'Bandhavgarh'],
     gallery: [
@@ -374,7 +396,8 @@ export const indianStates = [
     region: 'Central', 
     capital: 'Raipur', 
     bestTime: 'October to February', 
-    image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800', 
+    image: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800',
+    bannerImage: `${BASE_URL}Banner/Chhattisgarh.jpg`,
     description: 'Unexplored gem with waterfalls, caves, and tribal heritage.',
     attractions: ['Raipur', 'Chitrakote Falls', 'Bastar', 'Sirpur', 'Barnawapara Wildlife'],
     gallery: [
@@ -392,7 +415,8 @@ export const indianStates = [
     region: 'Central', 
     capital: 'Lucknow', 
     bestTime: 'October to March', 
-    image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800', 
+    image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800',
+    bannerImage: `${BASE_URL}Banner/UP.jpg`,
     description: 'Land of Taj Mahal, Varanasi, and spiritual heritage.',
     attractions: ['Agra', 'Varanasi', 'Lucknow', 'Mathura', 'Vrindavan'],
     gallery: [
@@ -412,7 +436,8 @@ export const indianStates = [
     region: 'Northeast', 
     capital: 'Dispur', 
     bestTime: 'October to April', 
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800', 
+    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800',
+    bannerImage: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1600',
     description: 'Land of tea gardens, one-horned rhinos, and Brahmaputra.',
     attractions: ['Guwahati', 'Kaziranga', 'Majuli', 'Jorhat', 'Sivasagar'],
     gallery: [
@@ -430,7 +455,8 @@ export const indianStates = [
     region: 'Northeast', 
     capital: 'Shillong', 
     bestTime: 'October to May', 
-    image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=800', 
+    image: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=800',
+    bannerImage: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=1600',
     description: 'Abode of clouds with living root bridges and waterfalls.',
     attractions: ['Shillong', 'Cherrapunji', 'Dawki', 'Mawlynnong', 'Nongriat'],
     gallery: [
@@ -448,7 +474,8 @@ export const indianStates = [
     region: 'Northeast', 
     capital: 'Itanagar', 
     bestTime: 'March to October', 
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800', 
+    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800',
+    bannerImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600',
     description: 'Land of rising sun with monasteries and pristine nature.',
     attractions: ['Tawang', 'Ziro Valley', 'Bomdila', 'Namdapha', 'Itanagar'],
     gallery: [
@@ -466,7 +493,8 @@ export const indianStates = [
     region: 'Northeast', 
     capital: 'Gangtok', 
     bestTime: 'March to May', 
-    image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800', 
+    image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800',
+    bannerImage: `${BASE_URL}Banner/Sikkim.jpg`,
     description: 'Himalayan paradise with monasteries and Kanchenjunga views.',
     attractions: ['Gangtok', 'Pelling', 'Tsomgo Lake', 'Nathula Pass', 'Ravangla'],
     gallery: [
@@ -484,7 +512,8 @@ export const indianStates = [
     region: 'Northeast', 
     capital: 'Kohima', 
     bestTime: 'October to May', 
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800', 
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800',
+    bannerImage: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600',
     description: 'Land of festivals with Hornbill Festival and tribal culture.',
     attractions: ['Kohima', 'Dimapur', 'Mokokchung', 'Dzukou Valley', 'Hornbill Festival'],
     gallery: [
@@ -502,7 +531,8 @@ export const indianStates = [
     region: 'Northeast', 
     capital: 'Imphal', 
     bestTime: 'October to February', 
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800', 
+    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800',
+    bannerImage: 'https://images.unsplash.com/photo-1593693397690-362cb9666fc2?w=1600',
     description: 'Jewel of India with Loktak Lake and rich dance traditions.',
     attractions: ['Imphal', 'Loktak Lake', 'Keibul Lamjao', 'Kangla Fort', 'Ukhrul'],
     gallery: [
@@ -520,7 +550,8 @@ export const indianStates = [
     region: 'Northeast', 
     capital: 'Aizawl', 
     bestTime: 'October to March', 
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800', 
+    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800',
+    bannerImage: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1600',
     description: 'Land of blue mountains with scenic beauty and culture.',
     attractions: ['Aizawl', 'Champhai', 'Reiek', 'Phawngpui Peak', 'Tam Dil Lake'],
     gallery: [
@@ -538,7 +569,8 @@ export const indianStates = [
     region: 'Northeast', 
     capital: 'Agartala', 
     bestTime: 'September to February', 
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800', 
+    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800',
+    bannerImage: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1600',
     description: 'Land of palaces with Ujjayanta Palace and rock carvings.',
     attractions: ['Agartala', 'Ujjayanta Palace', 'Neermahal', 'Unakoti', 'Sepahijala'],
     gallery: [

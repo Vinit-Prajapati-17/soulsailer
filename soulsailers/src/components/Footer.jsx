@@ -20,10 +20,7 @@ const Footer = () => {
               <Link to="/" className="footer-logo">
                 <img src={`${BASE_URL}logo.png`} alt="SoulSailers - Where Planning Meets Perfection" className="footer-logo-image" />
               </Link>
-              <p className="footer-desc">
-                Your trusted travel companion for exploring India and the world. 
-                We craft unforgettable journeys with expert planning and local insights.
-              </p>
+              
               <div className="social-links">
                 <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
                 <a href="#" aria-label="Instagram"><Instagram size={20} /></a>

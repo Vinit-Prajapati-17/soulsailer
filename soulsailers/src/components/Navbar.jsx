@@ -39,7 +39,11 @@ const Navbar = ({ theme, toggleTheme }) => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="logo">
-          <img src={`${BASE_URL}logo.png`} alt="SoulSailers - Where Planning Meets Perfection" className="logo-image" />
+          <img 
+            src={theme === 'light' ? `${BASE_URL}White logo.png` : `${BASE_URL}logo.png`} 
+            alt="SoulSailers - Where Planning Meets Perfection" 
+            className="logo-image" 
+          />
         </Link>
 
         <div className="nav-links">

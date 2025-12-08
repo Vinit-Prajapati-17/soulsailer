@@ -1,8 +1,9 @@
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { MapPin, Calendar, DollarSign, Clock, ArrowLeft, Plane, Camera } from 'lucide-react'
+import { MapPin, Calendar, DollarSign, Clock, ArrowLeft, Plane } from 'lucide-react'
 import { getCountryById, continents } from '../data/countries'
 import ExpandableCard from '../components/ExpandableCard'
+import ParallaxGallery from '../components/ParallaxGallery'
 import './CountryPage.css'
 
 const CountryPage = () => {
@@ -110,39 +111,12 @@ const CountryPage = () => {
         </div>
       </section>
 
-      {/* Gallery */}
-      <section className="country-gallery section alt-bg">
-        <div className="container">
-          <motion.div 
-            className="section-header"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="section-title">Photo Gallery</h2>
-            <p className="section-subtitle">Glimpses of {country.name}</p>
-          </motion.div>
-
-          <div className="gallery-grid">
-            {galleryImages.map((img, index) => (
-              <motion.div 
-                key={index}
-                className="gallery-item"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.02 }}
-              >
-                <img src={img} alt={`${country.name} ${index + 1}`} loading="lazy" />
-                <div className="gallery-overlay">
-                  <Camera size={24} />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Gallery - Parallax */}
+      <ParallaxGallery 
+        images={galleryImages} 
+        title="Photo Gallery" 
+        subtitle={`Glimpses of ${country.name}`} 
+      />
 
       {/* CTA */}
       <section className="country-cta section">

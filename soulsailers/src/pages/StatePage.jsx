@@ -1,15 +1,14 @@
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { MapPin, Calendar, Clock, Sun, Camera, Download, ArrowLeft, ChevronRight } from 'lucide-react'
+import { MapPin, Calendar, Clock, ArrowLeft } from 'lucide-react'
 import { getStateById } from '../data/indianStates'
-import { getItineraryByState } from '../data/itineraries'
 import ExpandableCard from '../components/ExpandableCard'
+import ParallaxGallery from '../components/ParallaxGallery'
 import './StatePage.css'
 
 const StatePage = () => {
   const { stateId } = useParams()
   const state = getStateById(stateId)
-  const itineraryData = getItineraryByState(stateId)
 
   if (!state) {
     return (
@@ -34,7 +33,7 @@ const StatePage = () => {
       {/* Hero */}
       <section className="state-hero">
         <div className="state-hero-bg">
-          <img src={state.image} alt={state.name} />
+          <img src={state.bannerImage || state.image} alt={state.name} />
           <div className="state-hero-overlay"></div>
         </div>
         <motion.div 
@@ -45,13 +44,7 @@ const StatePage = () => {
           <Link to="/india" className="back-link">
             <ArrowLeft size={18} /> Back to India
           </Link>
-          <h1>{state.name}</h1>
-          <p>{state.description}</p>
-          <div className="state-quick-info">
-            <span><MapPin size={18} /> {state.capital}</span>
-            <span><Calendar size={18} /> {state.bestTime}</span>
-            <span><Sun size={18} /> {state.region} India</span>
-          </div>
+         
         </motion.div>
       </section>
 
@@ -112,113 +105,14 @@ const StatePage = () => {
       </section>
 
 
-      {/* Itineraries */}
-      {itineraryData && (
-        <section className="itineraries-section section alt-bg">
-          <div className="container">
-            <motion.div 
-              className="section-header"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="section-title">{state.name} Itineraries</h2>
-              <p className="section-subtitle">Choose from our curated travel plans</p>
-            </motion.div>
 
-            <div className="itinerary-tabs">
-              {itineraryData.itineraries.map((itinerary, index) => (
-                <motion.div 
-                  key={index}
-                  className="itinerary-card"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <div className="itinerary-header">
-                    <div className="days-badge">{itinerary.days} {itinerary.days === 1 ? 'Day' : 'Days'}</div>
-                    <h3>{itinerary.title}</h3>
-                    <div className="highlights">
-                      {itinerary.highlights.map((h, i) => (
-                        <span key={i}>{h}</span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="itinerary-schedule">
-                    {itinerary.days === 1 ? (
-                      itinerary.schedule.map((item, i) => (
-                        <div key={i} className="schedule-item">
-                          <div className="schedule-time">{item.time}</div>
-                          <div className="schedule-content">
-                            <p>{item.activity}</p>
-                            {item.tip && <span className="tip">💡 {item.tip}</span>}
-                          </div>
-                        </div>
-                      ))
-                    ) : (
-                      itinerary.schedule.map((day, i) => (
-                        <div key={i} className="day-card">
-                          <div className="day-header">
-                            <span className="day-number">Day {day.day}</span>
-                            <h4>{day.title}</h4>
-                          </div>
-                          <ul className="day-activities">
-                            {day.activities.map((activity, j) => (
-                              <li key={j}><ChevronRight size={14} /> {activity}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))
-                    )}
-                  </div>
 
-                  <div className="itinerary-actions">
-                    <button className="btn btn-primary">
-                      <Download size={18} /> Download PDF
-                    </button>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Photo Gallery */}
-      <section className="gallery-section section">
-        <div className="container">
-          <motion.div 
-            className="section-header"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="section-title">Photo Gallery</h2>
-            <p className="section-subtitle">Glimpses of {state.name}</p>
-          </motion.div>
-
-          <div className="gallery-grid">
-            {galleryImages.map((img, index) => (
-              <motion.div 
-                key={index}
-                className={`gallery-item ${index === 0 ? 'large' : ''}`}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.02 }}
-              >
-                <img src={img} alt={`${state.name} ${index + 1}`} loading="lazy" />
-                <div className="gallery-overlay">
-                  <Camera size={24} />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Photo Gallery - Parallax */}
+      <ParallaxGallery 
+        images={galleryImages} 
+        title="Photo Gallery" 
+        subtitle={`Glimpses of ${state.name}`} 
+      />
 
       {/* CTA */}
       <section className="state-cta section">

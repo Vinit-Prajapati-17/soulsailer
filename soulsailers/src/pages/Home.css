@@ -76,6 +76,10 @@
   padding: 100px 0;
 }
 
+[data-theme="light"] .features {
+  background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+}
+
 .features-journey {
   position: relative;
   margin-top: 60px;
@@ -158,6 +162,12 @@
   margin-bottom: 30px;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+}
+
+[data-theme="light"] .feature-node {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border: 2px solid rgba(0, 119, 182, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .feature-item:hover .feature-node {
@@ -400,6 +410,10 @@
   overflow: hidden;
 }
 
+[data-theme="light"] .tips {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, #f7fafc 100%);
+}
+
 .tips::before {
   content: '';
   position: absolute;
@@ -447,6 +461,12 @@
   background: linear-gradient(145deg, rgba(25, 25, 30, 0.9), rgba(15, 15, 20, 0.95));
   border: 1px solid rgba(255, 255, 255, 0.06);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="light"] .tip-bento {
+  background: linear-gradient(145deg, #ffffff, #f7fafc);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .tip-bento::before {
@@ -787,6 +807,10 @@
   background: #000;
 }
 
+[data-theme="light"] .india-showcase {
+  background: #ffffff;
+}
+
 /* Floating Particles */
 .showcase-particles {
   position: absolute;
@@ -885,6 +909,10 @@
   max-width: 700px;
 }
 
+[data-theme="light"] .india-text-top {
+  color: var(--text-primary);
+}
+
 .india-badge {
   display: inline-flex;
   align-items: center;
@@ -906,6 +934,10 @@
   line-height: 1.2;
   margin-bottom: 0;
   color: #fff;
+}
+
+[data-theme="light"] .india-text-top h2 {
+  color: var(--text-primary);
 }
 
 .india-text-top .gradient-text {

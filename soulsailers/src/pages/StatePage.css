@@ -152,66 +152,92 @@
 }
 
 
-/* Itineraries */
+/* Itineraries - Small Vertical Cards Grid */
 .itinerary-tabs {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 .itinerary-card {
   background: var(--bg-card);
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.itinerary-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 119, 182, 0.15);
 }
 
 .itinerary-header {
-  padding: 30px;
+  padding: 20px;
   background: var(--gradient-primary);
   color: var(--white);
 }
 
 .days-badge {
-  display: inline-block;
-  padding: 6px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
   background: var(--orange);
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .itinerary-header h3 {
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .highlights {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
 }
 
 .highlights span {
-  padding: 5px 12px;
+  padding: 4px 10px;
   background: rgba(255,255,255,0.2);
   border-radius: 15px;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .itinerary-schedule {
-  padding: 25px;
-  max-height: 400px;
+  padding: 16px;
+  flex: 1;
+  max-height: 200px;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .schedule-item {
   display: flex;
-  gap: 20px;
-  padding: 15px 0;
-  border-bottom: 1px solid var(--border-color);
+  gap: 10px;
+  padding: 10px;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  border: none;
+}
+
+.schedule-item:hover {
+  background: var(--bg-primary);
 }
 
 .schedule-item:last-child {
@@ -221,75 +247,77 @@
 .schedule-time {
   font-weight: 600;
   color: var(--primary-blue);
-  min-width: 80px;
-  font-size: 0.9rem;
+  min-width: 55px;
+  font-size: 0.75rem;
 }
 
 .schedule-content p {
   color: var(--text-primary);
   font-weight: 500;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
+  font-size: 0.8rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .schedule-content .tip {
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   color: var(--orange);
+  display: none;
 }
 
 .day-card {
-  padding: 20px;
+  padding: 12px;
   background: var(--bg-secondary);
-  border-radius: 15px;
-  margin-bottom: 15px;
+  border-radius: 10px;
+  margin-bottom: 0;
 }
 
-.day-card:last-child {
-  margin-bottom: 0;
+.day-card:hover {
+  background: var(--bg-primary);
 }
 
 .day-header {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
+  gap: 10px;
+  margin-bottom: 8px;
 }
 
 .day-number {
-  padding: 5px 12px;
-  background: var(--primary-blue);
+  padding: 4px 10px;
+  background: var(--gradient-primary);
   color: var(--white);
-  border-radius: 20px;
-  font-size: 0.8rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
   font-weight: 600;
 }
 
 .day-header h4 {
   color: var(--text-primary);
   font-weight: 600;
+  font-size: 0.85rem;
 }
 
 .day-activities {
+  display: none;
+}
+
+.itinerary-actions {
+  padding: 16px;
+  border-top: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.day-activities li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-}
-
-.day-activities svg {
-  color: var(--orange);
-  flex-shrink: 0;
-}
-
-.itinerary-actions {
-  padding: 20px 25px;
-  border-top: 1px solid var(--border-color);
+.itinerary-actions .btn {
+  width: 100%;
+  justify-content: center;
+  padding: 10px 16px;
+  font-size: 0.8rem;
 }
 
 /* Gallery */
@@ -382,11 +410,15 @@
 /* Responsive */
 @media (max-width: 1200px) {
   .itinerary-tabs {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 992px) {
+  .itinerary-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
   .overview-grid {
     grid-template-columns: 1fr;
   }
@@ -402,6 +434,77 @@
 
   .state-hero-content h1 {
     font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .itinerary-tabs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .itinerary-card {
+    border-radius: 14px;
+  }
+  
+  .itinerary-header {
+    padding: 16px;
+  }
+  
+  .itinerary-header h3 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .days-badge {
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+  }
+  
+  .highlights span {
+    padding: 3px 8px;
+    font-size: 0.65rem;
+  }
+  
+  .itinerary-schedule {
+    padding: 12px;
+    max-height: 150px;
+  }
+  
+  .schedule-item {
+    padding: 8px;
+  }
+  
+  .schedule-time {
+    min-width: 50px;
+    font-size: 0.7rem;
+  }
+  
+  .schedule-content p {
+    font-size: 0.75rem;
+  }
+  
+  .day-card {
+    padding: 10px;
+  }
+  
+  .day-header h4 {
+    font-size: 0.8rem;
+  }
+  
+  .day-number {
+    padding: 3px 8px;
+    font-size: 0.65rem;
+  }
+  
+  .itinerary-actions {
+    padding: 12px;
+  }
+  
+  .itinerary-actions .btn {
+    padding: 8px 12px;
+    font-size: 0.75rem;
   }
 }
 
@@ -438,5 +541,86 @@
 
   .cta-box .cta-buttons {
     flex-direction: column;
+  }
+  
+  .itinerary-tabs {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  
+  .itinerary-card {
+    border-radius: 12px;
+  }
+  
+  .itinerary-header {
+    padding: 14px;
+  }
+  
+  .itinerary-header h3 {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+  
+  .days-badge {
+    padding: 3px 8px;
+    font-size: 0.65rem;
+    margin-bottom: 8px;
+  }
+  
+  .highlights {
+    gap: 4px;
+  }
+  
+  .highlights span {
+    padding: 2px 6px;
+    font-size: 0.6rem;
+  }
+  
+  .itinerary-schedule {
+    padding: 10px;
+    max-height: 120px;
+    gap: 6px;
+  }
+  
+  .schedule-item {
+    padding: 6px;
+    gap: 6px;
+  }
+  
+  .schedule-time {
+    min-width: 45px;
+    font-size: 0.65rem;
+  }
+  
+  .schedule-content p {
+    font-size: 0.7rem;
+  }
+  
+  .day-card {
+    padding: 8px;
+  }
+  
+  .day-header {
+    gap: 6px;
+    margin-bottom: 0;
+  }
+  
+  .day-header h4 {
+    font-size: 0.75rem;
+  }
+  
+  .day-number {
+    padding: 2px 6px;
+    font-size: 0.6rem;
+  }
+  
+  .itinerary-actions {
+    padding: 10px;
+    gap: 6px;
+  }
+  
+  .itinerary-actions .btn {
+    padding: 6px 10px;
+    font-size: 0.7rem;
   }
 }
