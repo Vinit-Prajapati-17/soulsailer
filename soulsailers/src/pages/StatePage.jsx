@@ -35,17 +35,18 @@ const StatePage = () => {
         <div className="state-hero-bg">
           <img src={state.bannerImage || state.image} alt={state.name} />
           <div className="state-hero-overlay"></div>
+          <motion.div 
+            className="state-hero-content"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <div className="container-inner">
+              <Link to="/india" className="back-link">
+                <ArrowLeft size={18} /> Back to India
+              </Link>
+            </div>
+          </motion.div>
         </div>
-        <motion.div 
-          className="state-hero-content"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <Link to="/india" className="back-link">
-            <ArrowLeft size={18} /> Back to India
-          </Link>
-         
-        </motion.div>
       </section>
 
       {/* Overview */}

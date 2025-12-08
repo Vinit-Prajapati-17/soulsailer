@@ -10,33 +10,40 @@
 /* State Hero */
 .state-hero {
   position: relative;
-  height: 70vh;
-  min-height: 500px;
+  height: auto;
+  min-height: unset;
   display: flex;
   align-items: flex-end;
-  padding-bottom: 80px;
+  padding-bottom: 30px;
+  background: #000;
 }
 
 .state-hero-bg {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  width: 100%;
 }
 
 .state-hero-bg img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .state-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.3) 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 40%, transparent 100%);
 }
 
 .state-hero-content {
-  position: relative;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+}
+
+.state-hero-content .container-inner {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
@@ -440,13 +447,11 @@
 
 @media (max-width: 768px) {
   .state-hero {
-    height: 55vh;
-    min-height: 350px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
   }
   
-  .state-hero-bg img {
-    object-position: center center;
+  .state-hero-content {
+    bottom: 20px;
   }
   
   .state-hero-content h1 {
@@ -525,24 +530,25 @@
 
 @media (max-width: 576px) {
   .state-hero {
-    height: auto;
-    min-height: 50vh;
-    padding-bottom: 40px;
-    padding-top: 80px;
+    padding-bottom: 15px;
   }
   
-  .state-hero-bg img {
-    object-fit: cover;
-    object-position: center top;
+  .state-hero-content {
+    bottom: 15px;
   }
 
   .state-hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 
   .state-quick-info {
     flex-direction: column;
     gap: 15px;
+  }
+  
+  .back-link {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
   }
 
   .gallery-grid {
