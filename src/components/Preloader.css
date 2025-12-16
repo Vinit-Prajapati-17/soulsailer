@@ -1,0 +1,125 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #1a2840;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.preloader-video-wrapper {
+  position: relative;
+  width: 60vw;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: logoFadeIn 1s ease-out 0.5s both;
+}
+
+.preloader-logo-img {
+  height: 100px;
+  width: auto;
+  
+}
+
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.preloader-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Feathered edge mask for seamless blending */
+.preloader-video-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -30px;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    #1a2840 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Soft vignette overlay */
+.preloader-video-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  box-shadow: inset 0 0 60px 30px #1a2840;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .preloader-video-wrapper {
+    width: 90vw;
+    height: 40vh;
+  }
+
+  .preloader-logo-img {
+    height: 70px;
+  }
+  
+  .preloader-content {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .preloader-video-wrapper {
+    width: 95vw;
+    height: 35vh;
+  }
+
+  .preloader-logo-img {
+    height: 55px;
+  }
+  
+  .preloader-content {
+    gap: 12px;
+  }
+  
+  .preloader-video-wrapper::before {
+    inset: -20px;
+  }
+  
+  .preloader-video-wrapper::after {
+    box-shadow: inset 0 0 40px 20px #1a2840;
+  }
+}
