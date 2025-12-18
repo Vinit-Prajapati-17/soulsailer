@@ -21,7 +21,6 @@ export const HeroParallax = ({ products }) => {
   useEffect(() => {
     const initializeScrollSystem = () => {
       // Force tiny scroll movement (0→1→0) to activate scroll event system
-      const currentScroll = window.scrollY;
       window.scrollTo(0, 1);
       window.scrollTo(0, 0);
       

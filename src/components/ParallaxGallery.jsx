@@ -21,6 +21,7 @@ const ParallaxGallery = ({ images = [], title = "Photo Gallery", subtitle = "Exp
   const galleryRef = useRef(null)
   const [dimension, setDimension] = useState({ width: 0, height: 0 })
   const [isMobile, setIsMobile] = useState(false)
+  const [scrollInitialized, setScrollInitialized] = useState(false)
 
   const { scrollYProgress } = useScroll({
     target: galleryRef,
@@ -34,6 +35,51 @@ const ParallaxGallery = ({ images = [], title = "Photo Gallery", subtitle = "Exp
   const y2 = useTransform(scrollYProgress, [0, 1], [0, isMobile ? height * 0.4 : height * 3.3])
   const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25])
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3])
+
+  // Fix for scroll-based animations initialization
+  useEffect(() => {
+    const initializeScrollSystem = () => {
+      // Force tiny scroll movement (0→1→0) to activate scroll event system
+      window.scrollTo(0, 1);
+      window.scrollTo(0, 0);
+      
+      // Dispatch scroll event to ensure Framer Motion detects it
+      window.dispatchEvent(new Event('scroll', { bubbles: true }));
+      
+      setScrollInitialized(true);
+    };
+
+    // Initialize after component mounts
+    const timer = setTimeout(initializeScrollSystem, 100);
+    
+    // Add scroll listener to ensure system stays active
+    const handleScroll = () => {
+      if (!scrollInitialized) {
+        setScrollInitialized(true);
+      }
+    };
+
+    // Add window load listener as fallback
+    const handleLoad = () => {
+      if (!scrollInitialized) {
+        setTimeout(initializeScrollSystem, 50);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
+    
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('load', handleLoad);
+    };
+  }, [scrollInitialized]);
 
   useEffect(() => {
     const resize = () => {
