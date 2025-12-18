@@ -5,69 +5,64 @@ import { attractionDetails } from "../data/attractionDetails";
 // Attraction data with images and USPs
 const attractionData = {
    // Thailand
-  "Bangkok": { image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=400", usp: "Vibrant capital with ornate temples & legendary street food" },
-  "Phuket": { image: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=400", usp: "Thailand's largest island with stunning beaches & nightlife" },
-  "Chiang Mai": { image: "https://images.unsplash.com/photo-1528181304800-259b08848526?w=400", usp: "Mountain city with 300+ temples & elephant sanctuaries" },
-  "Krabi": { image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=400", usp: "Limestone cliffs, emerald waters & island hopping paradise" },
-  "Pattaya": { image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400", usp: "Beach resort city with water sports & entertainment" },
+  "Bangkok": { image: "/soulsailer/international/thailand/bangkok.jpg", usp: "Vibrant capital with ornate temples & legendary street food" },
+  "Phuket": { image: "/soulsailer/international/thailand/phuket.jpg", usp: "Thailand's largest island with stunning beaches & nightlife" },
+  "Chiang Mai": { image: "/soulsailer/international/thailand/chiang mai.jpg", usp: "Mountain city with 300+ temples & elephant sanctuaries" },
+  "Krabi": { image: "/soulsailer/international/thailand/krabi.jpg", usp: "Limestone cliffs, emerald waters & island hopping paradise" },
+  "Pattaya": { image: "/soulsailer/international/thailand/pattaya.jpg", usp: "Beach resort city with water sports & entertainment" },
     // Singapore
-  "Marina Bay": { image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400", usp: "Iconic skyline with Marina Bay Sands & light shows" },
-  "Sentosa": { image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400", usp: "Resort island with Universal Studios & beaches" },
-  "Gardens by the Bay": { image: "https://images.unsplash.com/photo-1506351421178-63b52a2d2562?w=400", usp: "Futuristic Supertrees & world's largest glass greenhouse" },
-  "Orchard Road": { image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400", usp: "Premier shopping boulevard with luxury brands" },
-  "Chinatown": { image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400", usp: "Heritage district with temples & hawker food" },
+  "Marina Bay": { image: "/soulsailer/international/singapore/marina bay.jpg", usp: "Iconic skyline with Marina Bay Sands & light shows" },
+  "Sentosa": { image: "/soulsailer/international/singapore/sentosa.jpg", usp: "Resort island with Universal Studios & beaches" },
+  "Gardens by the Bay": { image: "/soulsailer/international/singapore/gardens by bay.jpg", usp: "Futuristic Supertrees & world's largest glass greenhouse" },
+  "Orchard Road": { image: "/soulsailer/international/singapore/orchard road.jpg", usp: "Premier shopping boulevard with luxury brands" },
+  "Chinatown": { image: "/soulsailer/international/singapore/china town.jpg", usp: "Heritage district with temples & hawker food" },
   // Vietnam
-  "Ha Long Bay": { image: "https://images.unsplash.com/photo-1557750255-c76072a7aad1?w=400", usp: "UNESCO site with 1600+ limestone islands & caves" },
-  "Ho Chi Minh City": { image: "https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=400", usp: "Dynamic metropolis with French colonial architecture" },
-  "Hanoi": { image: "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=400", usp: "Ancient capital with Old Quarter & street food culture" },
-  "Hoi An": { image: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=400", usp: "Lantern-lit ancient town & tailor-made fashion" },
-  "Da Nang": { image: "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=400", usp: "Coastal city with marble mountains & dragon bridge" },
-  // Indonesia
-  "Bali": { image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400", usp: "Island of Gods with temples, rice terraces & beaches" },
-  "Jakarta": { image: "https://images.unsplash.com/photo-1555899434-94d1368aa7af?w=400", usp: "Bustling capital with museums & vibrant nightlife" },
-  "Yogyakarta": { image: "https://images.unsplash.com/photo-1584810359583-96fc3448beaa?w=400", usp: "Cultural heart with Borobudur & Prambanan temples" },
-  "Komodo Island": { image: "https://images.unsplash.com/photo-1570789210967-2cac24ba7f2b?w=400", usp: "Home of Komodo dragons & pink beaches" },
-  "Raja Ampat": { image: "https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?w=400", usp: "World's best diving with 75% of coral species" },
+  "Ha Long Bay": { image: "/soulsailer/international/vietnam/ha long.jpg", usp: "UNESCO site with 1600+ limestone islands & caves" },
+  "Ho Chi Minh City": { image: "/soulsailer/international/vietnam/ho chin minh.jpg", usp: "Dynamic metropolis with French colonial architecture" },
+  "Hanoi": { image: "/soulsailer/international/vietnam/hanoi.jpg", usp: "Ancient capital with Old Quarter & street food culture" },
+  "Hoi An": { image: "/soulsailer/international/vietnam/hoi an.jpg", usp: "Lantern-lit ancient town & tailor-made fashion" },
+  "Da Nang": { image: "/soulsailer/international/vietnam/da nang.jpg", usp: "Coastal city with marble mountains & dragon bridge" },
   // Malaysia
-  "Kuala Lumpur": { image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=400", usp: "Iconic Petronas Towers & multicultural food scene" },
-  "Langkawi": { image: "https://images.unsplash.com/photo-1609946860441-a51ffcf22208?w=400", usp: "Duty-free island with sky bridge & mangroves" },
-  "Penang": { image: "https://images.unsplash.com/photo-1592364395653-83e648b20cc2?w=400", usp: "UNESCO heritage with best street food in Asia" },
-  "Borneo": { image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=400", usp: "Ancient rainforests with orangutans & Mount Kinabalu" },
-  "Cameron Highlands": { image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=400", usp: "Cool hill station with tea plantations & strawberry farms" },
+  "Kuala Lumpur": { image: "/soulsailer/international/malasiya/kuala lumpur.jpg", usp: "Iconic Petronas Towers & multicultural food scene" },
+  "Langkawi": { image: "/soulsailer/international/malasiya/langkawi.jpg", usp: "Duty-free island with sky bridge & mangroves" },
+  "Penang": { image: "/soulsailer/international/malasiya/penang.jpg", usp: "UNESCO heritage with best street food in Asia" },
+  "Borneo": { image: "/soulsailer/international/malasiya/borneo.jpg", usp: "Ancient rainforests with orangutans & Mount Kinabalu" },
+  "Cameron Highlands": { image: "/soulsailer/international/malasiya/camaron.jpg", usp: "Cool hill station with tea plantations & strawberry farms" },
   // UAE
-  "Dubai Mall": { image: "/soulsailer/international/dubai/abu dhabi.jpg", usp: "Futuristic city with world's tallest buildings & luxury malls" },
-  "Abu Dhabi": { image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400", usp: "Capital with Sheikh Zayed Mosque & Louvre museum" },
-  "Burj Khalifa": { image: "https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?w=400", usp: "World's tallest building at 828m with stunning views" },
-  "Palm Jumeirah": { image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400", usp: "Man-made island with luxury resorts & Atlantis" },
-  "Desert Safari": { image: "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?w=400", usp: "Dune bashing, camel rides & Bedouin camp experience" },
+  "Dubai": { image: "/soulsailer/international/dubai/dubaimall.jpg", usp: "Futuristic city with world's tallest buildings & luxury malls" },
+  "Dubai Mall": { image: "/soulsailer/international/dubai/dubaimall.jpg", usp: "Futuristic city with world's tallest buildings & luxury malls" },
+  "Abu Dhabi": { image: "/soulsailer/international/dubai/abu dhabi.jpg", usp: "Capital with Sheikh Zayed Mosque & Louvre museum" },
+  "Burj Khalifa": { image: "/soulsailer/international/dubai/burj-2.jpg", usp: "World's tallest building at 828m with stunning views" },
+  "Palm Jumeirah": { image: "/soulsailer/international/dubai/palm jumeirah.jpg", usp: "Man-made island with luxury resorts & Atlantis" },
+  "Desert Safari": { image: "/soulsailer/international/dubai/dessert safari.jpg", usp: "Dune bashing, camel rides & Bedouin camp experience" },
   
    //Bali
-  "Bali": { image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400", usp: "Island of Gods with temples, rice terraces & beaches" },
-  "Ubud": { image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400", usp: "Cultural heart with art galleries, yoga & rice paddies" },
-  "Seminyak": { image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400", usp: "Trendy beach area with boutiques & beach clubs" },
-  "Uluwatu": { image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400", usp: "Clifftop temple with stunning sunset & Kecak dance" },
-  "Nusa Penida": { image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400", usp: "Dramatic cliffs, crystal waters & manta rays" },
+  "Bali": { image: "/soulsailer/international/bali/bali.jpg", usp: "Island of Gods with temples, rice terraces & beaches" },
+  "Ubud": { image: "/soulsailer/international/bali/ubud.jpg", usp: "Cultural heart with art galleries, yoga & rice paddies" },
+  "Seminyak": { image: "/soulsailer/international/bali/seminyak.jpg", usp: "Trendy beach area with boutiques & beach clubs" },
+  "Uluwatu": { image: "/soulsailer/international/bali/uluwatu.jpg", usp: "Clifftop temple with stunning sunset & Kecak dance" },
+  "Nusa Penida": { image: "/soulsailer/international/bali/nusa.jpg", usp: "Dramatic cliffs, crystal waters & manta rays" },
   
   //Maldives
-  "Malé": { image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=400", usp: "Colorful capital with fish market & Grand Friday Mosque" },
-  "Overwater Villas": { image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=400", usp: "Iconic luxury stays with glass floor & ocean views" },
-  "Coral Reefs": { image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400", usp: "World-class snorkeling & diving with marine life" },
-  "Sandbanks": { image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=400", usp: "Private picnics on pristine white sand islands" },
-  "Sunset Cruises": { image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=400", usp: "Dolphin watching & romantic dhoni boat rides" },
+  "Malé": { image: "/soulsailer/international/maldives/male.jpeg", usp: "Colorful capital with fish market & Grand Friday Mosque" },
+  "Overwater Villas": { image: "/soulsailer/international/maldives/overwatervillas.jpg", usp: "Iconic luxury stays with glass floor & ocean views" },
+  "Coral Reefs": { image: "/soulsailer/international/maldives/coralreefs.jpg", usp: "World-class snorkeling & diving with marine life" },
+  "Sandbanks": { image: "/soulsailer/international/maldives/sandbanks.jpg", usp: "Private picnics on pristine white sand islands" },
+  "Sunset Cruises": { image: "/soulsailer/international/maldives/sunset cruise.jpeg", usp: "Dolphin watching & romantic dhoni boat rides" },
   
   //Andaman & Nicobar
-  "Havelock Island": { image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400", usp: "Radhanagar Beach - Asia's best beach with pristine waters" },
-  "Neil Island": { image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400", usp: "Natural rock formations & peaceful beaches" },
-  "Port Blair": { image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400", usp: "Cellular Jail & Corbyn's Cove Beach" },
-  "Ross Island": { image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400", usp: "British colonial ruins & deer spotting" },
-  "Baratang Island": { image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400", usp: "Limestone caves & mangrove creeks" },
+  "Havelock Island": { image: "/soulsailer/international/andaman/havelockisland.jpg", usp: "Radhanagar Beach - Asia's best beach with pristine waters" },
+  "Neil Island": { image: "/soulsailer/international/andaman/neilisland.jpg", usp: "Natural rock formations & peaceful beaches" },
+  "Port Blair": { image: "/soulsailer/international/andaman/portblair.jpg", usp: "Cellular Jail & Corbyn's Cove Beach" },
+  "Ross Island": { image: "/soulsailer/international/andaman/Ross-Island.jpg", usp: "British colonial ruins & deer spotting" },
+  "Baratang Island": { image: "/soulsailer/international/andaman/Baratang_Island.jpg", usp: "Limestone caves & mangrove creeks" },
   
   //Lakshadweep
-  "Agatti Island": { image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=400", usp: "Gateway island with stunning lagoon & water sports" },
-  "Bangaram Island": { image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=400", usp: "Uninhabited paradise with crystal clear waters" },
-  "Kavaratti": { image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=400", usp: "Capital island with marine aquarium & mosques" },
-  "Minicoy Island": { image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=400", usp: "Southernmost island with lighthouse & tuna fishing" },
-  "Kadmat Island": { image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=400", usp: "Scuba diving paradise with coral reefs" },
+  "Agatti Island": { image: "/soulsailer/international/lakshadweep/Agatti Island.jpg", usp: "Gateway island with stunning lagoon & water sports" },
+  "Bangaram Island": { image: "/soulsailer/international/lakshadweep/bangaram.jpg", usp: "Uninhabited paradise with crystal clear waters" },
+  "Kavaratti": { image: "/soulsailer/international/lakshadweep/kavaratti.jpg", usp: "Capital island with marine aquarium & mosques" },
+  "Minicoy Island": { image: "/soulsailer/international/lakshadweep/minicoyisland.jpg", usp: "Southernmost island with lighthouse & tuna fishing" },
+  "Kadmat Island": { image: "/soulsailer/international/lakshadweep/kadmatisland.jpg", usp: "Scuba diving paradise with coral reefs" },
 
   // INDIAN STATES ATTRACTIONS
   // Gujarat
@@ -349,7 +344,6 @@ const ExpandableCard = ({ attractions, stateId }) => {
           fontSize: '0.7rem',
           color: '#f5a623'
         }}>
-          📍 {stateId ? stateId.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ') : 'India'}
         </div>
       </div>
 

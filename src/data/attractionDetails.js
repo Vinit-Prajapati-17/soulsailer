@@ -958,6 +958,12 @@ export const attractionDetails = {
   },
 
   // INTERNATIONAL - DUBAI
+  "Dubai": {
+    bestTime: "November to March",
+    duration: "3-4 days",
+    highlights: ["Burj Khalifa", "Dubai Mall", "Palm Jumeirah", "Desert Safari"],
+    tips: "Visit in evening for fountain show. Book attractions online."
+  },
   "Dubai Mall": {
     bestTime: "November to March",
     duration: "1 day",
