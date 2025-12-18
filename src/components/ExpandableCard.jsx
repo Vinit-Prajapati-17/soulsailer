@@ -4,37 +4,13 @@ import { attractionDetails } from "../data/attractionDetails";
 
 // Attraction data with images and USPs
 const attractionData = {
-  // France
-  "Paris": { image: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400", usp: "City of Love with Eiffel Tower, Louvre & cafés" },
-  "Nice": { image: "https://images.unsplash.com/photo-1491166617655-0723a0999cfc?w=400", usp: "French Riviera gem with azure waters & promenades" },
-  "Lyon": { image: "https://images.unsplash.com/photo-1524484485831-a92ffc0de03f?w=400", usp: "Gastronomic capital with Renaissance architecture" },
-  "Provence": { image: "https://images.unsplash.com/photo-1499002238440-d264edd596ec?w=400", usp: "Lavender fields, vineyards & charming villages" },
-  "French Riviera": { image: "https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=400", usp: "Glamorous coastline with Cannes & Monaco" },
-  // Japan
-  "Tokyo": { image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400", usp: "World's largest metropolitan area with neon lights & anime culture" },
-  "Kyoto": { image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400", usp: "Ancient capital with 2000+ temples & traditional geisha districts" },
-  "Mount Fuji": { image: "https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=400", usp: "Japan's iconic sacred mountain & UNESCO World Heritage Site" },
-  "Osaka": { image: "https://images.unsplash.com/photo-1590559899731-a382839e5549?w=400", usp: "Japan's kitchen with street food paradise & vibrant nightlife" },
-  "Hiroshima": { image: "https://images.unsplash.com/photo-1576675466969-38eeae4b41f6?w=400", usp: "Peace Memorial & resilient city reborn from history" },
-  // Thailand
+   // Thailand
   "Bangkok": { image: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=400", usp: "Vibrant capital with ornate temples & legendary street food" },
   "Phuket": { image: "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=400", usp: "Thailand's largest island with stunning beaches & nightlife" },
   "Chiang Mai": { image: "https://images.unsplash.com/photo-1528181304800-259b08848526?w=400", usp: "Mountain city with 300+ temples & elephant sanctuaries" },
   "Krabi": { image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=400", usp: "Limestone cliffs, emerald waters & island hopping paradise" },
   "Pattaya": { image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400", usp: "Beach resort city with water sports & entertainment" },
-  // Italy
-  "Rome": { image: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400", usp: "Eternal City with Colosseum, Vatican & ancient ruins" },
-  "Venice": { image: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?w=400", usp: "Floating city with gondolas & romantic canals" },
-  "Florence": { image: "https://images.unsplash.com/photo-1543429258-c5ca3cb3f3ca?w=400", usp: "Renaissance art capital with Duomo & Uffizi" },
-  "Milan": { image: "https://images.unsplash.com/photo-1520440229-6469a149ac59?w=400", usp: "Fashion capital with Gothic cathedral & La Scala" },
-  "Amalfi Coast": { image: "https://images.unsplash.com/photo-1534113414509-0eec2bfb493f?w=400", usp: "Dramatic cliffside villages & Mediterranean beauty" },
-  // Spain
-  "Barcelona": { image: "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400", usp: "Gaudí's masterpieces, beaches & vibrant nightlife" },
-  "Madrid": { image: "https://images.unsplash.com/photo-1543783207-ec64e4d95325?w=400", usp: "Royal Palace, Prado Museum & tapas culture" },
-  "Seville": { image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400", usp: "Flamenco birthplace with Alcázar & Gothic cathedral" },
-  "Granada": { image: "https://images.unsplash.com/photo-1509030450996-dd1a26dda07a?w=400", usp: "Alhambra palace & Moorish heritage" },
-  "Ibiza": { image: "https://images.unsplash.com/photo-1534258936925-c58bed479fcb?w=400", usp: "World-famous party island & beautiful beaches" },
-  // Singapore
+    // Singapore
   "Marina Bay": { image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?w=400", usp: "Iconic skyline with Marina Bay Sands & light shows" },
   "Sentosa": { image: "https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400", usp: "Resort island with Universal Studios & beaches" },
   "Gardens by the Bay": { image: "https://images.unsplash.com/photo-1506351421178-63b52a2d2562?w=400", usp: "Futuristic Supertrees & world's largest glass greenhouse" },
@@ -59,60 +35,40 @@ const attractionData = {
   "Borneo": { image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=400", usp: "Ancient rainforests with orangutans & Mount Kinabalu" },
   "Cameron Highlands": { image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=400", usp: "Cool hill station with tea plantations & strawberry farms" },
   // UAE
-  "Dubai": { image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400", usp: "Futuristic city with world's tallest buildings & luxury malls" },
+  "Dubai Mall": { image: "/soulsailer/international/dubai/abu dhabi.jpg", usp: "Futuristic city with world's tallest buildings & luxury malls" },
   "Abu Dhabi": { image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400", usp: "Capital with Sheikh Zayed Mosque & Louvre museum" },
   "Burj Khalifa": { image: "https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?w=400", usp: "World's tallest building at 828m with stunning views" },
   "Palm Jumeirah": { image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400", usp: "Man-made island with luxury resorts & Atlantis" },
   "Desert Safari": { image: "https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?w=400", usp: "Dune bashing, camel rides & Bedouin camp experience" },
-  // Switzerland
-  "Zurich": { image: "https://images.unsplash.com/photo-1515488764276-beab7607c1e6?w=400", usp: "Financial hub with Old Town & lake views" },
-  "Geneva": { image: "https://images.unsplash.com/photo-1573108724029-4c46571d6490?w=400", usp: "International city with Jet d'Eau & UN headquarters" },
-  "Interlaken": { image: "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?w=400", usp: "Adventure capital between two stunning lakes" },
-  "Lucerne": { image: "https://images.unsplash.com/photo-1527668752968-14dc70a27c95?w=400", usp: "Medieval charm with Chapel Bridge & Mount Pilatus" },
-  "Zermatt": { image: "https://images.unsplash.com/photo-1529923986776-f5e8c8e5b8e5?w=400", usp: "Car-free village with iconic Matterhorn views" },
-  // Greece
-  "Athens": { image: "https://images.unsplash.com/photo-1555993539-1732b0258235?w=400", usp: "Acropolis, Parthenon & birthplace of democracy" },
-  "Santorini": { image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=400", usp: "Iconic blue domes, sunsets & volcanic beaches" },
-  "Mykonos": { image: "https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?w=400", usp: "Cosmopolitan island with windmills & beach clubs" },
-  "Crete": { image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=400", usp: "Largest island with Minoan ruins & gorges" },
-  "Rhodes": { image: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400", usp: "Medieval Old Town & ancient Colossus site" },
-  // UK
-  "London": { image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400", usp: "Big Ben, Buckingham Palace & world-class museums" },
-  "Edinburgh": { image: "https://images.unsplash.com/photo-1506377585622-bedcbb027afc?w=400", usp: "Historic castle, Royal Mile & festival city" },
-  "Oxford": { image: "https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?w=400", usp: "Prestigious university & Harry Potter filming sites" },
-  "Bath": { image: "https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=400", usp: "Roman baths & Georgian architecture" },
-  "Stonehenge": { image: "https://images.unsplash.com/photo-1599833975787-5c143f373c30?w=400", usp: "Mysterious prehistoric monument & UNESCO site" },
-  // USA
-  "New York": { image: "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=400", usp: "The Big Apple with Times Square, Central Park & Broadway" },
-  "Los Angeles": { image: "https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?w=400", usp: "Hollywood, beaches & entertainment capital" },
-  "Las Vegas": { image: "https://images.unsplash.com/photo-1605833556294-ea5c7a74f57d?w=400", usp: "Entertainment capital with casinos & shows" },
-  "San Francisco": { image: "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=400", usp: "Golden Gate Bridge, cable cars & tech hub" },
-  "Miami": { image: "https://images.unsplash.com/photo-1506966953602-c20cc11f75e3?w=400", usp: "Art Deco, beaches & Latin American vibes" },
-  // Canada
-  "Toronto": { image: "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=400", usp: "CN Tower, multicultural food & vibrant arts scene" },
-  "Vancouver": { image: "https://images.unsplash.com/photo-1559511260-66a68e7e7a8a?w=400", usp: "Mountains meet ocean with Stanley Park" },
-  "Montreal": { image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400", usp: "French-Canadian culture & historic Old Montreal" },
-  "Banff": { image: "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=400", usp: "Rocky Mountain paradise with turquoise lakes" },
-  "Niagara Falls": { image: "https://images.unsplash.com/photo-1489447068241-b3490214e879?w=400", usp: "Iconic waterfalls on US-Canada border" },
-  // Mexico
-  "Cancun": { image: "https://images.unsplash.com/photo-1552074284-5e88ef1aef18?w=400", usp: "Caribbean beaches & Mayan Riviera gateway" },
-  "Mexico City": { image: "https://images.unsplash.com/photo-1518638150340-f706e86654de?w=400", usp: "Historic center, museums & incredible food" },
-  "Playa del Carmen": { image: "https://images.unsplash.com/photo-1552074284-5e88ef1aef18?w=400", usp: "Trendy beach town with 5th Avenue shopping" },
-  "Tulum": { image: "https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?w=400", usp: "Clifftop Mayan ruins & bohemian beach vibes" },
-  "Oaxaca": { image: "https://images.unsplash.com/photo-1518638150340-f706e86654de?w=400", usp: "Indigenous culture, mezcal & artisan crafts" },
-  // Brazil
-  "Rio de Janeiro": { image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=400", usp: "Christ the Redeemer, Copacabana & Carnival" },
-  "São Paulo": { image: "https://images.unsplash.com/photo-1554168848-228452c09d60?w=400", usp: "Largest city in South America with art & food" },
-  "Amazon": { image: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400", usp: "World's largest rainforest & biodiversity hotspot" },
-  "Iguazu Falls": { image: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=400", usp: "275 waterfalls spanning Brazil-Argentina border" },
-  "Salvador": { image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=400", usp: "Afro-Brazilian culture & colorful Pelourinho" },
-  // Australia
-  "Sydney": { image: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=400", usp: "Opera House, Harbour Bridge & Bondi Beach" },
-  "Melbourne": { image: "https://images.unsplash.com/photo-1514395462725-fb4566210144?w=400", usp: "Coffee culture, street art & sports capital" },
-  "Great Barrier Reef": { image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=400", usp: "World's largest coral reef system & marine life" },
-  "Uluru": { image: "https://images.unsplash.com/photo-1529108190281-9a4f620bc2d8?w=400", usp: "Sacred red rock & Aboriginal cultural site" },
-  "Gold Coast": { image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=400", usp: "Surf beaches, theme parks & nightlife" },
   
+   //Bali
+  "Bali": { image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400", usp: "Island of Gods with temples, rice terraces & beaches" },
+  "Ubud": { image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400", usp: "Cultural heart with art galleries, yoga & rice paddies" },
+  "Seminyak": { image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400", usp: "Trendy beach area with boutiques & beach clubs" },
+  "Uluwatu": { image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400", usp: "Clifftop temple with stunning sunset & Kecak dance" },
+  "Nusa Penida": { image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400", usp: "Dramatic cliffs, crystal waters & manta rays" },
+  
+  //Maldives
+  "Malé": { image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=400", usp: "Colorful capital with fish market & Grand Friday Mosque" },
+  "Overwater Villas": { image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=400", usp: "Iconic luxury stays with glass floor & ocean views" },
+  "Coral Reefs": { image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400", usp: "World-class snorkeling & diving with marine life" },
+  "Sandbanks": { image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=400", usp: "Private picnics on pristine white sand islands" },
+  "Sunset Cruises": { image: "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=400", usp: "Dolphin watching & romantic dhoni boat rides" },
+  
+  //Andaman & Nicobar
+  "Havelock Island": { image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400", usp: "Radhanagar Beach - Asia's best beach with pristine waters" },
+  "Neil Island": { image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400", usp: "Natural rock formations & peaceful beaches" },
+  "Port Blair": { image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400", usp: "Cellular Jail & Corbyn's Cove Beach" },
+  "Ross Island": { image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400", usp: "British colonial ruins & deer spotting" },
+  "Baratang Island": { image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400", usp: "Limestone caves & mangrove creeks" },
+  
+  //Lakshadweep
+  "Agatti Island": { image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=400", usp: "Gateway island with stunning lagoon & water sports" },
+  "Bangaram Island": { image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=400", usp: "Uninhabited paradise with crystal clear waters" },
+  "Kavaratti": { image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=400", usp: "Capital island with marine aquarium & mosques" },
+  "Minicoy Island": { image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=400", usp: "Southernmost island with lighthouse & tuna fishing" },
+  "Kadmat Island": { image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=400", usp: "Scuba diving paradise with coral reefs" },
+
   // INDIAN STATES ATTRACTIONS
   // Gujarat
   "Rann of Kutch": { image: "/soulsailer/Famous Places/gujarat/rann of katch.jpg", usp: "World's largest salt desert with stunning white landscape & Rann Utsav festival" },
@@ -322,6 +278,7 @@ const attractionData = {
   "Neermahal": { image: "/soulsailer/Famous Places/TRIPURA/NEERMAHAL.jpg", usp: "Water palace in middle of Rudrasagar Lake" },
   "Unakoti": { image: "/soulsailer/Famous Places/TRIPURA/UNAKOTI.jpg", usp: "Rock-cut sculptures with giant Shiva head" },
   "Sepahijala": { image: "/soulsailer/Famous Places/TRIPURA/SEPAHIJALA.jpg", usp: "Wildlife sanctuary with spectacled monkeys" },
+  
 };
 
 

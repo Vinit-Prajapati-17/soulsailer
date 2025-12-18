@@ -955,5 +955,287 @@ export const attractionDetails = {
     duration: "Half day",
     highlights: ["98m waterfall", "Subarnarekha River", "Natural pool", "Trekking"],
     tips: "Best in monsoon. Swim in natural pool at base."
+  },
+
+  // INTERNATIONAL - DUBAI
+  "Dubai Mall": {
+    bestTime: "November to March",
+    duration: "1 day",
+    highlights: ["World's largest mall", "Dubai Aquarium", "Ice Rink", "Fountain show"],
+    tips: "Visit in evening for fountain show. Book aquarium tickets online."
+  },
+  "Abu Dhabi": {
+    bestTime: "November to March",
+    duration: "1-2 days",
+    highlights: ["Sheikh Zayed Mosque", "Louvre Abu Dhabi", "Yas Island", "Emirates Palace"],
+    tips: "Dress modestly for mosque. Book Louvre tickets in advance."
+  },
+  "Burj Khalifa": {
+    bestTime: "November to March",
+    duration: "2-3 hours",
+    highlights: ["World's tallest building", "Observation deck", "At The Top", "Sunset views"],
+    tips: "Book At The Top tickets online. Visit at sunset for best views."
+  },
+  "Palm Jumeirah": {
+    bestTime: "November to March",
+    duration: "1 day",
+    highlights: ["Atlantis resort", "Aquaventure", "Beach clubs", "Monorail ride"],
+    tips: "Take monorail for views. Visit Atlantis aquarium."
+  },
+  "Desert Safari": {
+    bestTime: "November to March",
+    duration: "Half day",
+    highlights: ["Dune bashing", "Camel rides", "BBQ dinner", "Belly dancing"],
+    tips: "Book evening safari. Wear comfortable clothes."
+  },
+
+  // INTERNATIONAL - BALI
+  "Ubud": {
+    bestTime: "April to October",
+    duration: "2-3 days",
+    highlights: ["Tegallalang Rice Terraces", "Monkey Forest", "Art galleries", "Yoga retreats"],
+    tips: "Visit rice terraces early morning. Book yoga classes in advance."
+  },
+  "Seminyak": {
+    bestTime: "April to October",
+    duration: "2-3 days",
+    highlights: ["Beach clubs", "Boutique shopping", "Fine dining", "Sunset bars"],
+    tips: "Visit Potato Head for sunset. Explore boutiques on Oberoi Street."
+  },
+  "Uluwatu": {
+    bestTime: "April to October",
+    duration: "1 day",
+    highlights: ["Uluwatu Temple", "Kecak dance", "Cliff views", "Surfing"],
+    tips: "Watch Kecak dance at sunset. Beware of monkeys at temple."
+  },
+  "Nusa Penida": {
+    bestTime: "April to October",
+    duration: "1-2 days",
+    highlights: ["Kelingking Beach", "Angel's Billabong", "Manta rays", "Crystal Bay"],
+    tips: "Book day trip from Bali. Wear sturdy shoes for trekking."
+  },
+
+  // INTERNATIONAL - MALDIVES
+  "Malé": {
+    bestTime: "November to April",
+    duration: "1 day",
+    highlights: ["Fish market", "Grand Friday Mosque", "National Museum", "Local markets"],
+    tips: "Visit fish market in morning. Dress modestly for mosque."
+  },
+  "Overwater Villas": {
+    bestTime: "November to April",
+    duration: "3-5 days",
+    highlights: ["Glass floor", "Private deck", "Ocean views", "Snorkeling access"],
+    tips: "Book well in advance. Choose sunset-facing villa."
+  },
+  "Coral Reefs": {
+    bestTime: "November to April",
+    duration: "Half day",
+    highlights: ["Snorkeling", "Scuba diving", "Marine life", "Coral gardens"],
+    tips: "Book guided snorkeling tour. Best visibility in dry season."
+  },
+  "Sandbanks": {
+    bestTime: "November to April",
+    duration: "Half day",
+    highlights: ["Private picnics", "Photography", "Swimming", "Pristine sand"],
+    tips: "Book sandbank excursion. Bring sunscreen and snorkeling gear."
+  },
+  "Sunset Cruises": {
+    bestTime: "November to April",
+    duration: "2-3 hours",
+    highlights: ["Dolphin watching", "Dhoni boat", "Romantic dinner", "Ocean views"],
+    tips: "Book sunset cruise for dolphins. Bring camera for photos."
+  },
+
+  // INTERNATIONAL - ANDAMAN & NICOBAR
+  "Havelock Island": {
+    bestTime: "October to May",
+    duration: "2-3 days",
+    highlights: ["Radhanagar Beach", "Elephant Beach", "Scuba diving", "Snorkeling"],
+    tips: "Visit Radhanagar at sunset. Book scuba diving in advance."
+  },
+  "Neil Island": {
+    bestTime: "October to May",
+    duration: "1-2 days",
+    highlights: ["Natural Bridge", "Bharatpur Beach", "Laxmanpur Beach", "Cycling"],
+    tips: "Rent bicycle to explore. Visit Natural Bridge at low tide."
+  },
+  "Port Blair": {
+    bestTime: "October to May",
+    duration: "2 days",
+    highlights: ["Cellular Jail", "Light & Sound show", "Corbyn's Cove", "Ross Island ferry"],
+    tips: "Attend Cellular Jail light show. Book Ross Island ferry early."
+  },
+  "Ross Island": {
+    bestTime: "October to May",
+    duration: "Half day",
+    highlights: ["British ruins", "Deer spotting", "Peacocks", "Historical walk"],
+    tips: "Take morning ferry. Carry water and snacks."
+  },
+  "Baratang Island": {
+    bestTime: "October to May",
+    duration: "1 day",
+    highlights: ["Limestone caves", "Mud volcano", "Mangrove creeks", "Jarawa territory"],
+    tips: "Book convoy permit. Respect Jarawa territory rules."
+  },
+
+  // INTERNATIONAL - LAKSHADWEEP
+  "Agatti Island": {
+    bestTime: "October to May",
+    duration: "2-3 days",
+    highlights: ["Lagoon", "Water sports", "Coral reefs", "Airport island"],
+    tips: "Book permits in advance. Try kayaking in lagoon."
+  },
+  "Bangaram Island": {
+    bestTime: "October to May",
+    duration: "2-3 days",
+    highlights: ["Uninhabited paradise", "Snorkeling", "Diving", "Beach walks"],
+    tips: "Only resort island. Book well in advance."
+  },
+  "Kavaratti": {
+    bestTime: "October to May",
+    duration: "1-2 days",
+    highlights: ["Marine aquarium", "Mosques", "Water sports", "Capital island"],
+    tips: "Visit marine aquarium. Explore beautiful mosques."
+  },
+  "Minicoy Island": {
+    bestTime: "October to May",
+    duration: "2 days",
+    highlights: ["Lighthouse", "Tuna fishing", "Maldivian culture", "Lagoon"],
+    tips: "Climb lighthouse for views. Experience local fishing culture."
+  },
+  "Kadmat Island": {
+    bestTime: "October to May",
+    duration: "2-3 days",
+    highlights: ["Scuba diving", "Coral reefs", "Beach resort", "Water sports"],
+    tips: "Best for diving. Book diving courses in advance."
+  },
+
+  // INTERNATIONAL - VIETNAM
+  "Ha Long Bay": {
+    bestTime: "October to April",
+    duration: "2-3 days",
+    highlights: ["Limestone islands", "Cruise tours", "Caves exploration", "Kayaking"],
+    tips: "Book overnight cruise. Visit Sung Sot Cave."
+  },
+  "Ho Chi Minh City": {
+    bestTime: "December to April",
+    duration: "2-3 days",
+    highlights: ["Cu Chi Tunnels", "War Remnants Museum", "Ben Thanh Market", "Notre Dame Cathedral"],
+    tips: "Visit Cu Chi Tunnels early. Try street food at Ben Thanh."
+  },
+  "Hanoi": {
+    bestTime: "October to April",
+    duration: "2-3 days",
+    highlights: ["Old Quarter", "Ho Chi Minh Mausoleum", "Temple of Literature", "Water puppet show"],
+    tips: "Walk the Old Quarter. Try egg coffee and pho."
+  },
+  "Hoi An": {
+    bestTime: "February to May",
+    duration: "2-3 days",
+    highlights: ["Ancient Town", "Lantern festival", "Tailor shops", "Japanese Bridge"],
+    tips: "Visit at night for lanterns. Get custom clothes made."
+  },
+  "Da Nang": {
+    bestTime: "February to May",
+    duration: "2 days",
+    highlights: ["Dragon Bridge", "Marble Mountains", "My Khe Beach", "Ba Na Hills"],
+    tips: "See Dragon Bridge fire show on weekends. Visit Golden Bridge."
+  },
+
+  // INTERNATIONAL - THAILAND
+  "Bangkok": {
+    bestTime: "November to February",
+    duration: "3-4 days",
+    highlights: ["Grand Palace", "Wat Pho", "Chatuchak Market", "Khao San Road"],
+    tips: "Dress modestly for temples. Visit Chatuchak on weekends."
+  },
+  "Phuket": {
+    bestTime: "November to February",
+    duration: "3-4 days",
+    highlights: ["Patong Beach", "Phi Phi Islands", "Big Buddha", "Old Town"],
+    tips: "Book island tours in advance. Visit Old Town for culture."
+  },
+  "Chiang Mai": {
+    bestTime: "November to February",
+    duration: "3-4 days",
+    highlights: ["Doi Suthep Temple", "Night Bazaar", "Elephant sanctuaries", "Cooking classes"],
+    tips: "Visit ethical elephant sanctuaries. Take a cooking class."
+  },
+  "Krabi": {
+    bestTime: "November to April",
+    duration: "3-4 days",
+    highlights: ["Railay Beach", "Four Islands tour", "Tiger Cave Temple", "Ao Nang"],
+    tips: "Take longtail boat to Railay. Climb Tiger Cave for views."
+  },
+  "Pattaya": {
+    bestTime: "November to February",
+    duration: "2-3 days",
+    highlights: ["Walking Street", "Sanctuary of Truth", "Coral Island", "Nong Nooch Garden"],
+    tips: "Visit Sanctuary of Truth at sunset. Try water sports."
+  },
+
+  // INTERNATIONAL - SINGAPORE
+  "Marina Bay": {
+    bestTime: "February to April",
+    duration: "1 day",
+    highlights: ["Marina Bay Sands", "Spectra light show", "Merlion Park", "Helix Bridge"],
+    tips: "Watch Spectra show at night. Visit SkyPark for views."
+  },
+  "Sentosa": {
+    bestTime: "February to April",
+    duration: "1-2 days",
+    highlights: ["Universal Studios", "S.E.A. Aquarium", "Siloso Beach", "Cable car"],
+    tips: "Buy express pass for Universal. Visit on weekdays."
+  },
+  "Gardens by the Bay": {
+    bestTime: "February to April",
+    duration: "Half day",
+    highlights: ["Supertree Grove", "Cloud Forest", "Flower Dome", "Light show"],
+    tips: "Visit at night for light show. Book conservatory tickets."
+  },
+  "Orchard Road": {
+    bestTime: "Year round",
+    duration: "Half day",
+    highlights: ["Shopping malls", "ION Orchard", "Luxury brands", "Food courts"],
+    tips: "Visit during Great Singapore Sale. Try food courts."
+  },
+  "Chinatown": {
+    bestTime: "Year round",
+    duration: "Half day",
+    highlights: ["Buddha Tooth Relic Temple", "Hawker centers", "Street markets", "Heritage"],
+    tips: "Try Maxwell Food Centre. Visit during Chinese New Year."
+  },
+
+  // INTERNATIONAL - MALAYSIA
+  "Kuala Lumpur": {
+    bestTime: "May to July",
+    duration: "2-3 days",
+    highlights: ["Petronas Towers", "Batu Caves", "Jalan Alor", "KL Tower"],
+    tips: "Book Petronas tickets online. Visit Batu Caves early."
+  },
+  "Langkawi": {
+    bestTime: "November to April",
+    duration: "3-4 days",
+    highlights: ["Sky Bridge", "Cable car", "Mangrove tour", "Duty-free shopping"],
+    tips: "Take cable car for Sky Bridge. Book mangrove tour."
+  },
+  "Penang": {
+    bestTime: "December to March",
+    duration: "2-3 days",
+    highlights: ["George Town", "Street art", "Kek Lok Si Temple", "Hawker food"],
+    tips: "Walk George Town for street art. Try char kway teow."
+  },
+  "Borneo": {
+    bestTime: "March to October",
+    duration: "4-5 days",
+    highlights: ["Mount Kinabalu", "Orangutan sanctuary", "Rainforest", "Diving"],
+    tips: "Book Kinabalu climb in advance. Visit Sepilok for orangutans."
+  },
+  "Cameron Highlands": {
+    bestTime: "Year round",
+    duration: "2 days",
+    highlights: ["Tea plantations", "Strawberry farms", "Mossy Forest", "Night market"],
+    tips: "Visit BOH tea plantation. Try strawberries and scones."
   }
 };

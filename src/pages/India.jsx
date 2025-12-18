@@ -89,7 +89,6 @@ const India = () => {
                 <Link to={`/india/${state.id}`} className="state-card">
                   <div className="state-image">
                     <img src={state.image} alt={state.name} loading="lazy" />
-                    <div className="state-region">{state.region}</div>
                   </div>
                   <div className="state-content">
                     <h3>{state.name}</h3>

@@ -63,9 +63,6 @@ const International = () => {
                 <Link to={`/international/${country.id}`} className="country-card">
                   <div className="country-image">
                     <img src={country.image} alt={country.name} loading="lazy" />
-                    <div className="country-continent">
-                      {continents.find(c => c.id === country.continent)?.icon}
-                    </div>
                   </div>
                   <div className="country-content">
                     <h3>{country.name}</h3>
