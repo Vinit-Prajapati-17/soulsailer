@@ -11,7 +11,7 @@ const SocialButtons = () => {
   return (
     <div className="social-buttons">
       <a 
-        href="https://www.instagram.com/soulsailer_" 
+        href="https://www.instagram.com/_soulsailer_" 
         target="_blank" 
         rel="noopener noreferrer"
         className="social-btn instagram"

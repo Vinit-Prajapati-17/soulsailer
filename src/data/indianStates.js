@@ -98,8 +98,7 @@ export const indianStates = [
     region: 'North', 
     capital: 'New Delhi', 
     bestTime: 'October to March', 
-    image: '/soulsailer/Famous Places/delhi/india gate.jpg',
-    bannerImage: `${BASE_URL}Banner/Delhi banner.png`,
+    image: '/soulsailer/Famous Places/delhi/Red fort.jpg',
     description: 'Capital city blending ancient history with modern vibrancy.',
     attractions: ['Red Fort', 'Qutub Minar', 'India Gate', 'Lotus Temple', 'Chandni Chowk'],
     gallery: [
@@ -414,7 +413,7 @@ export const indianStates = [
     capital: 'Dispur', 
     bestTime: 'October to April', 
     image: '/soulsailer/Famous Places/ASSAM/KAZIRANGA.jpg',
-    bannerImage: '/soulsailer/Famous Places/ASSAM/KAZIRANGA.jpg',
+    bannerImage: `${BASE_URL}Banner/Assam.jpg`,
     description: 'Land of tea gardens, one-horned rhinos, and Brahmaputra.',
     attractions: ['Guwahati', 'Kaziranga', 'Majuli', 'Jorhat', 'Sivasagar'],
     gallery: [
@@ -432,7 +431,7 @@ export const indianStates = [
     capital: 'Shillong', 
     bestTime: 'October to May', 
     image: '/soulsailer/Famous Places/MEGHALAYA/CHERAPUNJI.jpg',
-    bannerImage: '/soulsailer/Famous Places/MEGHALAYA/CHERAPUNJI.jpg',
+    bannerImage: `${BASE_URL}Banner/Meghalaya.jpg`,
     description: 'Abode of clouds with living root bridges and waterfalls.',
     attractions: ['Shillong', 'Cherrapunji', 'Dawki', 'Mawlynnong', 'Nongriat'],
     gallery: [
@@ -450,7 +449,7 @@ export const indianStates = [
     capital: 'Itanagar', 
     bestTime: 'March to October', 
     image: '/soulsailer/Famous Places/ARUNACHAL/TAWANG.jpg',
-    bannerImage: '/soulsailer/Famous Places/ARUNACHAL/TAWANG.jpg',
+    bannerImage: `${BASE_URL}Banner/Arunachal-2.jpg`,
     description: 'Land of rising sun with monasteries and pristine nature.',
     attractions: ['Tawang', 'Ziro Valley', 'Bomdila', 'Namdapha', 'Itanagar'],
     gallery: [
@@ -486,7 +485,7 @@ export const indianStates = [
     capital: 'Kohima', 
     bestTime: 'October to May', 
     image: '/soulsailer/Famous Places/NAGALAND/Hornbill-Festival.jpg',
-    bannerImage: '/soulsailer/Famous Places/NAGALAND/Hornbill-Festival.jpg',
+    bannerImage: `${BASE_URL}Banner/Nagaland.jpg`,
     description: 'Land of festivals with Hornbill Festival and tribal culture.',
     attractions: ['Kohima', 'Dimapur', 'Mokokchung', 'Dzukou Valley', 'Hornbill Festival'],
     gallery: [
@@ -504,7 +503,7 @@ export const indianStates = [
     capital: 'Imphal', 
     bestTime: 'October to February', 
     image: '/soulsailer/Famous Places/MANIPUR/LOKTAK LAKE.jpg',
-    bannerImage: '/soulsailer/Famous Places/MANIPUR/LOKTAK LAKE.jpg',
+    bannerImage: `${BASE_URL}Banner/manipur.jpg`,
     description: 'Jewel of India with Loktak Lake and rich dance traditions.',
     attractions: ['Imphal', 'Loktak Lake', 'Keibul Lamjao', 'Kangla Fort', 'Ukhrul'],
     gallery: [
@@ -522,7 +521,7 @@ export const indianStates = [
     capital: 'Aizawl', 
     bestTime: 'October to March', 
     image: '/soulsailer/Famous Places/MIZORAM/AIZWAL.jpg',
-    bannerImage: '/soulsailer/Famous Places/MIZORAM/AIZWAL.jpg',
+    bannerImage: `${BASE_URL}Banner/Mizoram.jpg`,
     description: 'Land of blue mountains with scenic beauty and culture.',
     attractions: ['Aizawl', 'Champhai', 'Reiek', 'Phawngpui Peak', 'Tam Dil Lake'],
     gallery: [
@@ -540,7 +539,7 @@ export const indianStates = [
     capital: 'Agartala', 
     bestTime: 'September to February', 
     image: '/soulsailer/Famous Places/TRIPURA/NEERMAHAL.jpg',
-    bannerImage: '/soulsailer/Famous Places/TRIPURA/NEERMAHAL.jpg',
+    bannerImage: `${BASE_URL}Banner/Tripura.jpg`,
     description: 'Land of palaces with Ujjayanta Palace and rock carvings.',
     attractions: ['Agartala', 'Ujjayanta Palace', 'Neermahal', 'Unakoti', 'Sepahijala'],
     gallery: [
