@@ -1,0 +1,818 @@
+.not-found {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* State Hero */
+.state-hero {
+  position: relative;
+  height: auto;
+  min-height: unset;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 30px;
+  background: #000;
+}
+
+.state-hero-bg {
+  position: relative;
+  width: 100%;
+}
+
+.state-hero-bg img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.state-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 40%, transparent 100%);
+}
+
+.state-hero-content {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+}
+
+.state-hero-content .container-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  color: var(--white);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--white);
+  opacity: 0.8;
+  margin-bottom: 20px;
+  transition: opacity var(--transition-fast);
+}
+
+.back-link:hover {
+  opacity: 1;
+}
+
+.state-hero-content h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.state-hero-content > p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 700px;
+  margin-bottom: 25px;
+}
+
+.state-quick-info {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.state-quick-info span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.state-quick-info svg {
+  color: var(--orange);
+}
+
+/* Overview */
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.overview-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.overview-content > p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: 15px;
+  border: 1px solid var(--border-color);
+}
+
+.info-icon {
+  width: 50px;
+  height: 50px;
+  padding: 12px;
+  background: var(--gradient-primary);
+  border-radius: 12px;
+  color: var(--white);
+}
+
+.info-card h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.info-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.overview-attractions {
+  position: sticky;
+  top: 100px;
+}
+
+
+/* Itineraries - Small Vertical Cards Grid */
+.itinerary-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.itinerary-card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.itinerary-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 119, 182, 0.15);
+}
+
+.itinerary-header {
+  padding: 20px;
+  background: var(--gradient-primary);
+  color: var(--white);
+}
+
+.days-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  background: var(--orange);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.itinerary-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.highlights span {
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 15px;
+  font-size: 0.7rem;
+}
+
+.itinerary-schedule {
+  padding: 16px;
+  flex: 1;
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.schedule-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  border: none;
+}
+
+.schedule-item:hover {
+  background: var(--bg-primary);
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+.schedule-time {
+  font-weight: 600;
+  color: var(--primary-blue);
+  min-width: 55px;
+  font-size: 0.75rem;
+}
+
+.schedule-content p {
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 2px;
+  font-size: 0.8rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.schedule-content .tip {
+  font-size: 0.7rem;
+  color: var(--orange);
+  display: none;
+}
+
+.day-card {
+  padding: 12px;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  margin-bottom: 0;
+}
+
+.day-card:hover {
+  background: var(--bg-primary);
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.day-number {
+  padding: 4px 10px;
+  background: var(--gradient-primary);
+  color: var(--white);
+  border-radius: 15px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.day-header h4 {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.day-activities {
+  display: none;
+}
+
+.itinerary-actions {
+  padding: 16px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.itinerary-actions .btn {
+  width: 100%;
+  justify-content: center;
+  padding: 10px 16px;
+  font-size: 0.8rem;
+}
+
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-item.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  color: var(--white);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* State CTA */
+.state-cta {
+  background: var(--bg-secondary);
+}
+
+.cta-box {
+  background: var(--gradient-hero);
+  padding: 60px;
+  border-radius: 30px;
+  text-align: center;
+  color: var(--white);
+}
+
+.cta-box h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.cta-box p {
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.cta-box .cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cta-box .btn-outline {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.cta-box .btn-outline:hover {
+  background: var(--white);
+  color: var(--deep-blue);
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .itinerary-tabs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .itinerary-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-attractions {
+    position: static;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 180px);
+  }
+
+  .state-hero-content h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .state-hero {
+    padding-bottom: 20px;
+  }
+  
+  .state-hero-content {
+    bottom: 20px;
+  }
+  
+  .state-hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .itinerary-tabs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .itinerary-card {
+    border-radius: 14px;
+  }
+  
+  .itinerary-header {
+    padding: 16px;
+  }
+  
+  .itinerary-header h3 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .days-badge {
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+  }
+  
+  .highlights span {
+    padding: 3px 8px;
+    font-size: 0.65rem;
+  }
+  
+  .itinerary-schedule {
+    padding: 12px;
+    max-height: 150px;
+  }
+  
+  .schedule-item {
+    padding: 8px;
+  }
+  
+  .schedule-time {
+    min-width: 50px;
+    font-size: 0.7rem;
+  }
+  
+  .schedule-content p {
+    font-size: 0.75rem;
+  }
+  
+  .day-card {
+    padding: 10px;
+  }
+  
+  .day-header h4 {
+    font-size: 0.8rem;
+  }
+  
+  .day-number {
+    padding: 3px 8px;
+    font-size: 0.65rem;
+  }
+  
+  .itinerary-actions {
+    padding: 12px;
+  }
+  
+  .itinerary-actions .btn {
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .state-hero {
+    padding-bottom: 15px;
+  }
+  
+  .state-hero-content {
+    bottom: 15px;
+  }
+
+  .state-hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .state-quick-info {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .back-link {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .gallery-item,
+  .gallery-item.large {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 200px;
+  }
+
+  .cta-box {
+    padding: 40px 25px;
+  }
+
+  .cta-box .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .itinerary-tabs {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  
+  .itinerary-card {
+    border-radius: 12px;
+  }
+  
+  .itinerary-header {
+    padding: 14px;
+  }
+  
+  .itinerary-header h3 {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+  
+  .days-badge {
+    padding: 3px 8px;
+    font-size: 0.65rem;
+    margin-bottom: 8px;
+  }
+  
+  .highlights {
+    gap: 4px;
+  }
+  
+  .highlights span {
+    padding: 2px 6px;
+    font-size: 0.6rem;
+  }
+  
+  .itinerary-schedule {
+    padding: 10px;
+    max-height: 120px;
+    gap: 6px;
+  }
+  
+  .schedule-item {
+    padding: 6px;
+    gap: 6px;
+  }
+  
+  .schedule-time {
+    min-width: 45px;
+    font-size: 0.65rem;
+  }
+  
+  .schedule-content p {
+    font-size: 0.7rem;
+  }
+  
+  .day-card {
+    padding: 8px;
+  }
+  
+  .day-header {
+    gap: 6px;
+    margin-bottom: 0;
+  }
+  
+  .day-header h4 {
+    font-size: 0.75rem;
+  }
+  
+  .day-number {
+    padding: 2px 6px;
+    font-size: 0.6rem;
+  }
+  
+  .itinerary-actions {
+    padding: 10px;
+    gap: 6px;
+  }
+  
+  .itinerary-actions .btn {
+    padding: 6px 10px;
+    font-size: 0.7rem;
+  }
+}
+
+/* PDF Downloads Section */
+.pdf-downloads {
+  background: var(--bg-primary);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+.pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.pdf-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  text-align: center;
+  min-height: 180px;
+  height: 100%;
+}
+
+.pdf-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 119, 182, 0.15);
+  border-color: var(--primary-blue);
+}
+
+.pdf-icon {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  background: var(--gradient-primary);
+  border-radius: 12px;
+  color: var(--white);
+  margin-bottom: 15px;
+  flex-shrink: 0;
+}
+
+.pdf-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.4;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdf-label {
+  display: inline-block;
+  padding: 5px 12px;
+  background: var(--orange);
+  color: var(--white);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+/* Responsive for PDF Downloads */
+@media (max-width: 992px) {
+  .pdf-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 18px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pdf-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .pdf-card {
+    padding: 25px 15px;
+    min-height: 160px;
+  }
+  
+  .pdf-icon {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .pdf-card h3 {
+    font-size: 0.85rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .pdf-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .pdf-card {
+    padding: 20px 15px;
+    min-height: 140px;
+  }
+  
+  .pdf-icon {
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .pdf-card h3 {
+    font-size: 0.8rem;
+  }
+  
+  .pdf-label {
+    padding: 4px 10px;
+    font-size: 0.7rem;
+  }
+  
+  .section-title {
+    font-size: 1.4rem;
+  }
+  
+  .section-subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+  }
+}
