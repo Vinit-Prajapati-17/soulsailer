@@ -49,7 +49,7 @@ export default function Preloader({ onComplete }) {
             muted
             playsInline
           >
-            <source src={`${BASE_URL}Preloder.mp4`} type="video/mp4" />
+            <source src={`${BASE_URL}preloder11.mp4`} type="video/mp4" />
           </video>
         </div>
         <div className="preloader-logo">
