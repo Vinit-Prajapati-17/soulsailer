@@ -1617,3 +1617,374 @@
     font-size: 0.7rem;
   }
 }
+
+/* Services Showcase Section */
+.services-showcase {
+  position: relative;
+  padding: 80px 0;
+  overflow: hidden;
+  background: #000;
+}
+
+[data-theme="light"] .services-showcase {
+  background: #ffffff;
+}
+
+.services-showcase .showcase-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.services-showcase .particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(245, 166, 35, 0.6);
+  border-radius: 50%;
+  animation: floatParticle 20s linear infinite;
+}
+
+.services-showcase .showcase-lines {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.services-showcase .line {
+  position: absolute;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 166, 35, 0.3), transparent);
+  animation: moveLine 8s ease-in-out infinite;
+}
+
+.services-showcase .line-1 {
+  top: 20%;
+  width: 60%;
+  left: -30%;
+  animation-delay: 0s;
+}
+
+.services-showcase .line-2 {
+  top: 50%;
+  width: 80%;
+  right: -40%;
+  left: auto;
+  animation-delay: 2s;
+}
+
+.services-showcase .line-3 {
+  top: 80%;
+  width: 50%;
+  left: -25%;
+  animation-delay: 4s;
+}
+
+.services-showcase .section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.services-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: transparent;
+  border: 1px solid rgba(245, 166, 35, 0.4);
+  border-radius: 50px;
+  color: var(--orange);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.services-showcase .section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+[data-theme="light"] .services-showcase .section-title {
+  color: var(--text-primary);
+}
+
+.services-showcase .section-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+[data-theme="light"] .services-showcase .section-subtitle {
+  color: var(--text-secondary);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Base Service Card */
+.service-card {
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: none;
+  position: relative;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+}
+
+/* All card types use the same styling now */
+.service-card-primary,
+.service-card-secondary,
+.service-card-accent,
+.service-card-gradient,
+.service-card-minimal,
+.service-card-bordered,
+.service-card-elevated,
+.service-card-modern,
+.service-card-corporate,
+.service-card-premium {
+  border-color: var(--border-color);
+}
+
+.service-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: none;
+  background: #f8f9fa;
+}
+
+[data-theme="dark"] .service-image img {
+  background: #1a1a1f;
+}
+
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  opacity: 0;
+  transition: none;
+}
+
+.service-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  background: var(--bg-card);
+  min-height: 130px;
+}
+
+.service-content h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  transition: none;
+  line-height: 1.3;
+}
+
+.service-content p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+  margin: 0;
+  opacity: 1;
+  display: block;
+  overflow: visible;
+  text-overflow: unset;
+  white-space: normal;
+}
+
+.services-cta {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 40px;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.services-cta h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.services-cta p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* Responsive Services Grid */
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  
+  .service-card {
+    height: 330px;
+  }
+  
+  .service-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-showcase {
+    padding: 60px 0;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+  
+  .service-card {
+    height: 320px;
+  }
+  
+  .service-image {
+    height: 170px;
+  }
+  
+  .service-content {
+    padding: 15px;
+    min-height: 130px;
+  }
+  
+  .service-content h3 {
+    font-size: 1rem;
+  }
+  
+  .service-content p {
+    font-size: 0.85rem;
+  }
+  
+  .services-cta {
+    padding: 30px 20px;
+  }
+  
+  .services-cta h3 {
+    font-size: 1.3rem;
+  }
+  
+  .services-cta p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .service-card {
+    height: 300px;
+  }
+  
+  .service-image {
+    height: 150px;
+  }
+  
+  .service-content {
+    padding: 12px;
+    min-height: 130px;
+  }
+  
+  .service-content h3 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+  
+  .service-content p {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  
+  .services-cta {
+    padding: 25px 15px;
+  }
+  
+  .services-cta h3 {
+    font-size: 1.2rem;
+  }
+  
+  .services-cta p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .services-grid {
+    gap: 10px;
+  }
+  
+  .service-card {
+    height: 280px;
+  }
+  
+  .service-image {
+    height: 130px;
+  }
+  
+  .service-content {
+    padding: 10px;
+    min-height: 130px;
+  }
+  
+  .service-content h3 {
+    font-size: 0.85rem;
+  }
+  
+  .service-content p {
+    font-size: 0.75rem;
+  }
+}

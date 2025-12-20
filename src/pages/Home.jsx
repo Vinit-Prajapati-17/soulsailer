@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { MapPin, Compass, Calendar, Users, Star, ArrowRight, Sparkles } from 'lucide-react'
+import { MapPin, Compass, Calendar, Users, Star, ArrowRight, Sparkles, Plane, Car, Hotel, Shield, FileText, Package, UserCheck, Globe } from 'lucide-react'
 import { indianStates } from '../data/indianStates'
 import { countries } from '../data/countries'
 import HeroSection from '../components/HeroSection'
@@ -203,6 +203,125 @@ const Home = () => {
                 />
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="services-showcase">
+        {/* Animated Background Elements */}
+        <div className="showcase-particles">
+          {[...Array(15)].map((_, i) => (
+            <div key={i} className="particle" style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${15 + Math.random() * 10}s`
+            }} />
+          ))}
+        </div>
+        
+        <div className="showcase-lines">
+          <div className="line line-1"></div>
+          <div className="line line-2"></div>
+          <div className="line line-3"></div>
+        </div>
+
+        <div className="container">
+          <motion.div 
+            className="section-header"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="services-badge">
+              <Sparkles size={16} /> Our Services
+            </span>
+            <h2 className="section-title">Complete Travel <span className="gradient-text">Solutions</span></h2>
+            <p className="section-subtitle">From planning to execution, we handle every aspect of your journey</p>
+          </motion.div>
+
+          <div className="services-grid">
+            {[
+              {
+                title: 'Flight Booking',
+                description: 'Best deals on domestic and international flights with 24/7 support and instant confirmation',
+                image: `${BASE_URL}services/flight.jpg`,
+                cardType: 'primary'
+              },
+              {
+                title: 'Hotel Reservations',
+                description: 'Handpicked accommodations from budget stays to luxury resorts worldwide',
+                image: `${BASE_URL}services/hotel.jpg`,
+                cardType: 'secondary'
+              },
+              {
+                title: 'Cab Services',
+                description: 'Reliable transportation with experienced drivers for all destinations',
+                image: `${BASE_URL}services/cab.jpg`,
+                cardType: 'accent'
+              },
+              {
+                title: 'Travel Insurance',
+                description: 'Comprehensive coverage for worry-free travel experiences and emergencies',
+                image: `${BASE_URL}services/insurance.jpg`,
+                cardType: 'gradient'
+              },
+              {
+                title: 'Visa Assistance',
+                description: 'Expert guidance for visa applications and documentation support',
+                image: `${BASE_URL}services/visa.jpg`,
+                cardType: 'minimal'
+              },
+              {
+                title: 'Passport Services',
+                description: 'Complete assistance for passport applications and renewals',
+                image: `${BASE_URL}services/passport.jpg`,
+                cardType: 'bordered'
+              },
+              {
+                title: 'Group Tours',
+                description: 'Specially curated group packages for families and friends with guided experiences',
+                image: `${BASE_URL}services/group.jpg`,
+                cardType: 'elevated'
+              },
+              {
+                title: 'Solo Travel',
+                description: 'Safe and exciting solo travel packages with local support and guidance',
+                image: `${BASE_URL}services/solo.jpg`,
+                cardType: 'modern'
+              },
+              {
+                title: 'Business Trips',
+                description: 'Professional travel solutions for corporate requirements and business needs',
+                image: `${BASE_URL}services/business trips.jpg`,
+                cardType: 'corporate'
+              },
+              {
+                title: 'Custom Packages',
+                description: 'Personalized itineraries tailored to your preferences, budget and travel style',
+                image: `${BASE_URL}services/package.jpg`,
+                cardType: 'premium'
+              }
+            ].map((service, index) => (
+              <motion.div
+                key={index}
+                className={`service-card service-card-${service.cardType}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                whileHover={{ y: -10 }}
+              >
+                <div className="service-image">
+                  <img src={service.image} alt={service.title} loading="lazy" />
+                  <div className="service-overlay"></div>
+                </div>
+                <div className="service-content">
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
