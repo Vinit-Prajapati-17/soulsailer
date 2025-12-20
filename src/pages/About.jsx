@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Users, Award, Globe, Heart, Target, Eye, MapPin, Plane } from 'lucide-react'
+import TeamCard from '../components/TeamCard'
 import './About.css'
 
 const About = () => {
@@ -18,10 +19,41 @@ const About = () => {
   ]
 
   const team = [
-    { name: 'XYZ', role: 'Founder & CEO', image: 'https://iages.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300' },
-    { name: 'XYZ', role: 'Head of Operations', image: 'https://iages.unsplash.com/photo-1494790108377-be9c29b29330?w=300' },
-    { name: 'XYZ', role: 'Travel Expert', image: 'https://imges.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300' },
-    { name: 'XYZ', role: 'Content Lead', image: 'https://iages.unsplash.com/photo-1438761681033-6461ffad8d80?w=300' },
+    { 
+      name: 'xyz', 
+      role: 'Founder & CEO', 
+      about: 'Passionate traveler with 10+ years of experience exploring India and beyond. Believes in creating transformative travel experiences.',
+      image: 'https://images',
+      email: 'rajesh@soulsailers.com',
+      social: {
+        instagram: 'https://instagram.com/rajeshkumar',
+        twitter: 'https://twitter.com/rajeshkumar',
+        github: 'https://github.com/rajeshkumar'
+      }
+    },
+    { 
+      name: 'zyz', 
+      role: 'Head of Operations', 
+      about: 'Expert in travel logistics and customer experience. Ensures every journey is seamlessly planned and executed.',
+      image: 'https://images',
+      email: 'priya@soulsailers.com',
+      social: {
+        instagram: 'https://instagram.com/priyasharma',
+        twitter: 'https://twitter.com/priyasharma'
+      }
+    },
+    { 
+      name: 'abc', 
+      role: 'Travel Expert', 
+      about: 'Local culture enthusiast and adventure seeker. Specializes in off-the-beaten-path destinations and authentic experiences.',
+      image: 'https://images',
+      email: 'arjun@soulsailers.com',
+      social: {
+        instagram: 'https://instagram.com/arjunpatel',
+        twitter: 'https://twitter.com/arjunpatel',
+        github: 'https://github.com/arjunpatel'
+      }
+    },
   ]
 
   return (
@@ -165,20 +197,19 @@ const About = () => {
             {team.map((member, index) => (
               <motion.div 
                 key={index}
-                className="team-card"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
               >
-                <div className="team-image">
-                  <img src={member.image} alt={member.name} />
-                </div>
-                <div className="team-info">
-                  <h3>{member.name}</h3>
-                  <p>{member.role}</p>
-                </div>
+                <TeamCard
+                  name={member.name}
+                  role={member.role}
+                  about={member.about}
+                  image={member.image}
+                  email={member.email}
+                  social={member.social}
+                />
               </motion.div>
             ))}
           </div>

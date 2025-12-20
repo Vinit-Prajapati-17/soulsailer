@@ -1,10 +1,25 @@
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { MapPin, Calendar, DollarSign, Clock, ArrowLeft, Plane } from 'lucide-react'
+import { MapPin, Calendar, DollarSign, Clock, ArrowLeft, Plane, Download, Eye } from 'lucide-react'
 import { getCountryById, continents } from '../data/countries'
 import ExpandableCard from '../components/ExpandableCard'
 import ParallaxGallery from '../components/ParallaxGallery'
 import './CountryPage.css'
+
+const BASE_URL = import.meta.env.BASE_URL;
+
+// PDF mapping for international destinations
+const internationalPDFMapping = {
+  'andaman-nicobar': 'andaman.pdf',
+  'bali': 'bali.pdf',
+  'uae': 'dubai.pdf',
+  'lakshadweep': 'lakshadweep.pdf',
+  'malaysia': 'malasiya.pdf',
+  'maldives': 'maldives.pdf',
+  'singapore': 'singapore.pdf',
+  'thailand': 'thailand.pdf',
+  'vietnam': 'vietnam.pdf'
+}
 
 const CountryPage = () => {
   const { countryId } = useParams()
@@ -17,6 +32,28 @@ const CountryPage = () => {
         <Link to="/international" className="btn btn-primary">Back to International</Link>
       </div>
     )
+  }
+
+  // Check if PDF is available for this country
+  const pdfFileName = internationalPDFMapping[countryId]
+  const pdfUrl = pdfFileName ? `${BASE_URL}internationaldetails/${pdfFileName}` : null
+
+  // PDF handler functions
+  const handleViewPDF = (url) => {
+    if (url) {
+      window.open(url, '_blank')
+    }
+  }
+
+  const handleDownloadPDF = (url, filename) => {
+    if (url) {
+      const link = document.createElement('a')
+      link.href = url
+      link.download = filename
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    }
   }
 
   const continent = continents.find(c => c.id === country.continent)
@@ -98,6 +135,37 @@ const CountryPage = () => {
                   </div>
                 </div>
               </div>
+
+              {/* PDF Section - Only show if PDF is available */}
+              {pdfUrl && (
+                <motion.div 
+                  className="pdf-section"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <h3>Travel Guide</h3>
+                  <p>Download or view our detailed travel guide for {country.name}</p>
+                  
+                  <div className="pdf-buttons">
+                    <button 
+                      onClick={() => handleViewPDF(pdfUrl)}
+                      className="btn btn-outline pdf-btn"
+                    >
+                      <Eye size={18} />
+                      View PDF
+                    </button>
+                    <button 
+                      onClick={() => handleDownloadPDF(pdfUrl, pdfFileName)}
+                      className="btn btn-orange pdf-btn"
+                    >
+                      <Download size={18} />
+                      Download PDF
+                    </button>
+                  </div>
+                </motion.div>
+              )}
             </motion.div>
 
             <motion.div

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { MapPin, Compass, Calendar, Users, Star, ArrowRight, Sparkles, Plane, Car, Hotel, Shield, FileText, Package, UserCheck, Globe } from 'lucide-react'
+import { MapPin, Compass, Calendar, Users, Star, ArrowRight, Sparkles } from 'lucide-react'
 import { indianStates } from '../data/indianStates'
 import { countries } from '../data/countries'
 import HeroSection from '../components/HeroSection'
@@ -98,7 +98,7 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="section-title">Why Choose SoulSailers?</h2>
+            <h2 className="section-title">Why Choose <span className="gradient-text">SoulSailers?</span></h2>
             <p className="section-subtitle">Your journey to unforgettable travel starts here</p>
           </motion.div>
 
@@ -208,24 +208,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="services-showcase">
-        {/* Animated Background Elements */}
-        <div className="showcase-particles">
-          {[...Array(15)].map((_, i) => (
-            <div key={i} className="particle" style={{
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${15 + Math.random() * 10}s`
-            }} />
-          ))}
-        </div>
-        
-        <div className="showcase-lines">
-          <div className="line line-1"></div>
-          <div className="line line-2"></div>
-          <div className="line line-3"></div>
-        </div>
-
+      <section className="services section">
         <div className="container">
           <motion.div 
             className="section-header"
@@ -233,9 +216,10 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="services-badge">
-              <Sparkles size={16} /> Our Services
-            </span>
+            <div className="services-badge">
+              <Sparkles size={16} />
+              <span>Our Services</span>
+            </div>
             <h2 className="section-title">Complete Travel <span className="gradient-text">Solutions</span></h2>
             <p className="section-subtitle">From planning to execution, we handle every aspect of your journey</p>
           </motion.div>
@@ -244,77 +228,65 @@ const Home = () => {
             {[
               {
                 title: 'Flight Booking',
-                description: 'Best deals on domestic and international flights with 24/7 support and instant confirmation',
-                image: `${BASE_URL}services/flight.jpg`,
-                cardType: 'primary'
+                description: 'Best deals on flights',
+                image: `${BASE_URL}services/flightt.jpg`
               },
               {
                 title: 'Hotel Reservations',
-                description: 'Handpicked accommodations from budget stays to luxury resorts worldwide',
-                image: `${BASE_URL}services/hotel.jpg`,
-                cardType: 'secondary'
+                description: 'Quality accommodations',
+                image: `${BASE_URL}services/hotell.jpg`
               },
               {
                 title: 'Cab Services',
-                description: 'Reliable transportation with experienced drivers for all destinations',
-                image: `${BASE_URL}services/cab.jpg`,
-                cardType: 'accent'
+                description: 'Reliable transportation',
+                image: `${BASE_URL}services/cabb.jpg`
               },
               {
                 title: 'Travel Insurance',
-                description: 'Comprehensive coverage for worry-free travel experiences and emergencies',
-                image: `${BASE_URL}services/insurance.jpg`,
-                cardType: 'gradient'
+                description: 'Comprehensive coverage',
+                image: `${BASE_URL}services/insurancee.jpg`
               },
               {
                 title: 'Visa Assistance',
-                description: 'Expert guidance for visa applications and documentation support',
-                image: `${BASE_URL}services/visa.jpg`,
-                cardType: 'minimal'
+                description: 'Expert visa guidance',
+                image: `${BASE_URL}services/visaa.jpg`
               },
               {
                 title: 'Passport Services',
-                description: 'Complete assistance for passport applications and renewals',
-                image: `${BASE_URL}services/passport.jpg`,
-                cardType: 'bordered'
+                description: 'Passport assistance',
+                image: `${BASE_URL}services/passportt.jpg`
               },
               {
                 title: 'Group Tours',
-                description: 'Specially curated group packages for families and friends with guided experiences',
-                image: `${BASE_URL}services/group.jpg`,
-                cardType: 'elevated'
+                description: 'Curated group packages',
+                image: `${BASE_URL}services/groupp.jpg`
               },
               {
                 title: 'Solo Travel',
-                description: 'Safe and exciting solo travel packages with local support and guidance',
-                image: `${BASE_URL}services/solo.jpg`,
-                cardType: 'modern'
+                description: 'Safe solo adventures',
+                image: `${BASE_URL}services/soloo.jpg`
               },
               {
                 title: 'Business Trips',
-                description: 'Professional travel solutions for corporate requirements and business needs',
-                image: `${BASE_URL}services/business trips.jpg`,
-                cardType: 'corporate'
+                description: 'Corporate travel solutions',
+                image: `${BASE_URL}services/business tripss.jpg`
               },
               {
                 title: 'Custom Packages',
-                description: 'Personalized itineraries tailored to your preferences, budget and travel style',
-                image: `${BASE_URL}services/package.jpg`,
-                cardType: 'premium'
+                description: 'Personalized itineraries',
+                image: `${BASE_URL}services/packagee.jpg`
               }
             ].map((service, index) => (
               <motion.div
                 key={index}
-                className={`service-card service-card-${service.cardType}`}
+                className="service-card"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ y: -10 }}
+                transition={{ delay: index * 0.1 }}
               >
                 <div className="service-image">
                   <img src={service.image} alt={service.title} loading="lazy" />
-                  <div className="service-overlay"></div>
                 </div>
                 <div className="service-content">
                   <h3>{service.title}</h3>
@@ -335,7 +307,7 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="section-title">Explore India</h2>
+            <h2 className="section-title">Explore <span className="gradient-text">India</span></h2>
             <p className="section-subtitle">Discover the incredible diversity of Indian destinations</p>
           </motion.div>
 
@@ -373,7 +345,7 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="section-title">International Tours</h2>
+            <h2 className="section-title">International <span className="gradient-text">Tours</span></h2>
             <p className="section-subtitle">Explore the world's most amazing destinations</p>
           </motion.div>
 
@@ -402,8 +374,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Travel Tips Section - Bento Grid */}
-      <section className="tips section">
+      {/* Why Choose SoulSailers - Interactive Cards */}
+      <section className="why-choose section">
         <div className="container">
           <motion.div 
             className="section-header"
@@ -411,35 +383,96 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="section-title">Travel Tips</h2>
-            <p className="section-subtitle">Expert advice for your next adventure</p>
+            <div className="why-choose-badge">
+              <Star size={16} />
+              <span>Why Choose Us</span>
+            </div>
+            <h2 className="section-title">What Makes SoulSailers <span className="gradient-text">Different</span></h2>
+            <p className="section-subtitle">Experience the difference with our personalized approach to travel</p>
           </motion.div>
 
-          <div className="tips-bento">
+          <div className="why-choose-grid">
             {[
-              { title: 'Best Time to Visit India', desc: 'October to March offers pleasant weather across most regions. The winter months are ideal for exploring Rajasthan, Kerala, and Goa, while summer is perfect for hill stations.', icon: '🌤️' },
-              { title: 'Budget Planning', desc: 'Plan ₹2000-5000 per day for comfortable travel in India', icon: '💰' },
-              { title: 'Packing Essentials', desc: 'Light layers, comfortable shoes, and universal adapter', icon: '🎒' },
-              { title: 'Local Etiquette', desc: 'Remove shoes at temples, dress modestly at religious sites. Always greet with "Namaste" and respect local customs.', icon: '🙏' },
-            ].map((tip, index) => (
+              { 
+                title: '24/7 Support', 
+                desc: 'Round-the-clock assistance to ensure your journey is smooth and worry-free',
+                icon: '🌟',
+                stat: '24/7',
+                statLabel: 'Support'
+              },
+              { 
+                title: 'Local Expertise', 
+                desc: 'Deep local knowledge and authentic experiences you won\'t find anywhere else',
+                icon: '🗺️',
+                stat: '50+',
+                statLabel: 'Destinations'
+              },
+              { 
+                title: 'Personalized Itineraries', 
+                desc: 'Every trip is tailored to your preferences, budget, and travel style',
+                icon: '✨',
+                stat: '100%',
+                statLabel: 'Customized'
+              },
+              { 
+                title: 'Trusted by Thousands', 
+                desc: 'Join thousands of satisfied travelers who chose SoulSailers for their adventures',
+                icon: '❤️',
+                stat: '5000+',
+                statLabel: 'Happy Clients'
+              }
+            ].map((feature, index) => (
               <motion.div 
                 key={index}
-                className="tip-bento"
-                initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                className="why-choose-card"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.15, duration: 0.5 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
+                whileHover={{ y: -10, scale: 1.02 }}
               >
-                <div className="tip-border-glow"></div>
-                <div className="tip-corner-accent"></div>
-                <div className="tip-bento-inner">
-                  <span className="tip-emoji">{tip.icon}</span>
-                  <h3>{tip.title}</h3>
-                  <p>{tip.desc}</p>
+                <div className="card-glow"></div>
+                <div className="card-content">
+                  <div className="card-header">
+                    <span className="card-emoji">{feature.icon}</span>
+                    <div className="card-stat">
+                      <div className="stat-number">{feature.stat}</div>
+                      <div className="stat-label">{feature.statLabel}</div>
+                    </div>
+                  </div>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.desc}</p>
                 </div>
+                <div className="card-border"></div>
               </motion.div>
             ))}
           </div>
+
+          {/* Trust Indicators */}
+          <motion.div 
+            className="trust-indicators"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <div className="trust-item">
+              <div className="trust-icon">🔒</div>
+              <span>Secure Booking</span>
+            </div>
+            <div className="trust-item">
+              <div className="trust-icon">🏅</div>
+              <span>Award Winning</span>
+            </div>
+            <div className="trust-item">
+              <div className="trust-icon">💯</div>
+              <span>100% Satisfaction</span>
+            </div>
+            <div className="trust-item">
+              <div className="trust-icon">🚀</div>
+              <span>Instant Confirmation</span>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -452,7 +485,7 @@ const Home = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <h2>Ready to Start Your Journey?</h2>
+            <h2>Ready to Start Your <span className="gradient-text">Journey?</span></h2>
             <p>Let us help you plan the perfect trip. Browse our curated itineraries or contact us for personalized recommendations.</p>
             <div className="cta-buttons">
               <Link to="/itineraries" className="btn btn-orange">Browse Itineraries</Link>
@@ -471,7 +504,7 @@ const Home = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="section-title">What Travelers Say</h2>
+            <h2 className="section-title">What Travelers <span className="gradient-text">Say</span></h2>
             <p className="section-subtitle">Real experiences from our happy travelers</p>
           </motion.div>
 

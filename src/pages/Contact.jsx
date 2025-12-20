@@ -233,15 +233,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
-      {/* Map Section */}
-      <section className="map-section">
-        <div className="map-placeholder">
-          <MapPin size={60} />
-          <h3>Find Us on Map</h3>
-          <p>123 Travel Street, Mumbai, Maharashtra</p>
-        </div>
-      </section>
     </div>
   )
 }

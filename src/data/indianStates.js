@@ -99,6 +99,7 @@ export const indianStates = [
     capital: 'New Delhi', 
     bestTime: 'October to March', 
     image: '/soulsailer/Famous Places/delhi/Red fort.jpg',
+    bannerImage: `${BASE_URL}Banner/Delhi.png`,
     description: 'Capital city blending ancient history with modern vibrancy.',
     attractions: ['Red Fort', 'Qutub Minar', 'India Gate', 'Lotus Temple', 'Chandni Chowk'],
     gallery: [
