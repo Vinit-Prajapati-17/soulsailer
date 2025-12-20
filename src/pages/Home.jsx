@@ -39,6 +39,7 @@ DestinationCard.displayName = 'DestinationCard';
 
 const Home = () => {
   const [heroReady, setHeroReady] = useState(false);
+  const [isInitialized, setIsInitialized] = useState(false);
   
   // Memoize expensive calculations
   const featuredIndian = React.useMemo(() => {
@@ -49,18 +50,44 @@ const Home = () => {
   const featuredInternational = React.useMemo(() => countries.slice(0, 4), []);
 
   useEffect(() => {
-    // Optimized hero section initialization
-    const timer = setTimeout(() => {
-      setHeroReady(true);
-    }, 50);
-    
-    return () => clearTimeout(timer);
+    // Ensure scroll system is ready before mounting hero
+    const initializeApp = () => {
+      // Force scroll system activation
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      window.scrollTo({ top: 1, behavior: 'instant' });
+      window.scrollTo({ top: currentScroll, behavior: 'instant' });
+      
+      // Dispatch events to activate scroll listeners
+      window.dispatchEvent(new Event('scroll', { bubbles: true }));
+      window.dispatchEvent(new Event('resize', { bubbles: true }));
+      
+      setIsInitialized(true);
+      
+      // Mount hero after scroll system is ready
+      requestAnimationFrame(() => {
+        setHeroReady(true);
+      });
+    };
+
+    // Multiple initialization strategies
+    if (document.readyState === 'complete') {
+      initializeApp();
+    } else {
+      window.addEventListener('load', initializeApp);
+      // Fallback timer
+      const timer = setTimeout(initializeApp, 100);
+      
+      return () => {
+        window.removeEventListener('load', initializeApp);
+        clearTimeout(timer);
+      };
+    }
   }, []);
 
   return (
     <div className="home">
       {/* Hero Section */}
-      {heroReady && <HeroSection />}
+      {heroReady && isInitialized && <HeroSection />}
 
       {/* Features Section - Journey Path */}
       <section className="features">

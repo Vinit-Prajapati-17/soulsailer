@@ -22,6 +22,9 @@ const ParallaxGallery = ({ images = [], title = "Photo Gallery", subtitle = "Exp
   const [dimension, setDimension] = useState({ width: 0, height: 0 })
   const [isMobile, setIsMobile] = useState(false)
   const [scrollInitialized, setScrollInitialized] = useState(false)
+  const [isReady, setIsReady] = useState(false)
+  const initTimeoutRef = useRef(null)
+  const retryCountRef = useRef(0)
 
   const { scrollYProgress } = useScroll({
     target: galleryRef,
@@ -36,50 +39,74 @@ const ParallaxGallery = ({ images = [], title = "Photo Gallery", subtitle = "Exp
   const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25])
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3])
 
-  // Fix for scroll-based animations initialization
+  // Robust scroll system initialization
   useEffect(() => {
     const initializeScrollSystem = () => {
-      // Force tiny scroll movement (0→1→0) to activate scroll event system
-      window.scrollTo(0, 1);
-      window.scrollTo(0, 0);
-      
-      // Dispatch scroll event to ensure Framer Motion detects it
-      window.dispatchEvent(new Event('scroll', { bubbles: true }));
-      
-      setScrollInitialized(true);
-    };
+      try {
+        if (initTimeoutRef.current) {
+          clearTimeout(initTimeoutRef.current);
+        }
 
-    // Initialize after component mounts
-    const timer = setTimeout(initializeScrollSystem, 100);
-    
-    // Add scroll listener to ensure system stays active
-    const handleScroll = () => {
-      if (!scrollInitialized) {
-        setScrollInitialized(true);
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Force scroll event system activation
+        window.scrollTo({ top: 1, behavior: 'instant' });
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        
+        if (currentScroll > 0) {
+          window.scrollTo({ top: currentScroll, behavior: 'instant' });
+        }
+        
+        window.dispatchEvent(new Event('scroll', { bubbles: true, cancelable: true }));
+        window.dispatchEvent(new Event('resize', { bubbles: true, cancelable: true }));
+        
+        requestAnimationFrame(() => {
+          window.dispatchEvent(new Event('scroll', { bubbles: true, cancelable: true }));
+          setScrollInitialized(true);
+          setIsReady(true);
+        });
+        
+      } catch (error) {
+        console.warn('Scroll initialization failed:', error);
+        if (retryCountRef.current < 3) {
+          retryCountRef.current++;
+          initTimeoutRef.current = setTimeout(initializeScrollSystem, 100 * retryCountRef.current);
+        }
       }
     };
 
-    // Add window load listener as fallback
-    const handleLoad = () => {
-      if (!scrollInitialized) {
-        setTimeout(initializeScrollSystem, 50);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    // Multiple initialization strategies
+    initializeScrollSystem();
     
-    if (document.readyState === 'complete') {
-      handleLoad();
-    } else {
-      window.addEventListener('load', handleLoad);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeScrollSystem);
     }
     
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('load', handleLoad);
+    window.addEventListener('load', initializeScrollSystem);
+    
+    const delayedInit = setTimeout(initializeScrollSystem, 50);
+    const secondaryInit = setTimeout(initializeScrollSystem, 200);
+    
+    const handleFirstScroll = () => {
+      if (!scrollInitialized) {
+        setScrollInitialized(true);
+        setIsReady(true);
+      }
     };
-  }, [scrollInitialized]);
+    
+    window.addEventListener('scroll', handleFirstScroll, { passive: true, once: true });
+    
+    return () => {
+      clearTimeout(delayedInit);
+      clearTimeout(secondaryInit);
+      if (initTimeoutRef.current) {
+        clearTimeout(initTimeoutRef.current);
+      }
+      document.removeEventListener('DOMContentLoaded', initializeScrollSystem);
+      window.removeEventListener('load', initializeScrollSystem);
+      window.removeEventListener('scroll', handleFirstScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const resize = () => {
