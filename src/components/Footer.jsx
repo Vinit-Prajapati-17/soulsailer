@@ -23,9 +23,7 @@ const Footer = () => {
               
               <div className="social-links">
                 <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
-                <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
-                <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
-                <a href="#" aria-label="Youtube"><Youtube size={20} /></a>
+                <a href="https://www.instagram.com/_soulsailer_" aria-label="Instagram"><Instagram size={20} /></a>
               </div>
             </div>
 
@@ -44,12 +42,12 @@ const Footer = () => {
             <div className="footer-links">
               <h4>Popular Destinations</h4>
               <ul>
-                <li><Link to="/india/rajasthan">Rajasthan</Link></li>
+                <li><Link to="/india/gujarat">Gujarat</Link></li>
                 <li><Link to="/india/kerala">Kerala</Link></li>
-                <li><Link to="/india/goa">Goa</Link></li>
+                <li><Link to="/india/rajasthana">Rajasthan</Link></li>
+                <li><Link to="/international/goa">Goa</Link></li>
+                <li><Link to="/international/dubai">Dubai</Link></li>
                 <li><Link to="/international/thailand">Thailand</Link></li>
-                <li><Link to="/international/switzerland">Switzerland</Link></li>
-                <li><Link to="/international/japan">Japan</Link></li>
               </ul>
             </div>
 
@@ -58,15 +56,15 @@ const Footer = () => {
               <ul>
                 <li>
                   <MapPin size={18} />
-                  <span>123 Travel Street, Mumbai, India</span>
+                  <span>Ahmedabad, Gujarat, India</span>
                 </li>
                 <li>
                   <Phone size={18} />
-                  <span>+91 98765 43210</span>
+                  <span>+91 78781 25009</span>
                 </li>
                 <li>
                   <Mail size={18} />
-                  <span>hello@soulsailers.com</span>
+                  <span>soulsailer2025@gmail.com</span>
                 </li>
               </ul>
             </div>

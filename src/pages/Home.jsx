@@ -42,7 +42,7 @@ const Home = () => {
   
   // Memoize expensive calculations
   const featuredIndian = React.useMemo(() => {
-    const featuredIndianIds = ['gujarat', 'himachal-pradesh', 'punjab', 'uttarakhand'];
+    const featuredIndianIds = ['gujarat', 'meghalaya', 'kerala', 'rajasthan'];
     return featuredIndianIds.map(id => indianStates.find(s => s.id === id)).filter(Boolean);
   }, []);
   
@@ -191,7 +191,6 @@ const Home = () => {
           >
             <h2 className="section-title">Explore India</h2>
             <p className="section-subtitle">Discover the incredible diversity of Indian destinations</p>
-            <Link to="/india" className="view-all">View All States <ArrowRight size={18} /></Link>
           </motion.div>
 
           <div className="destinations-grid">
@@ -207,6 +206,15 @@ const Home = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.div 
+            className="view-all-wrapper"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Link to="/india" className="view-all">View All States <ArrowRight size={18} /></Link>
+          </motion.div>
         </div>
       </section>
 
@@ -221,7 +229,6 @@ const Home = () => {
           >
             <h2 className="section-title">International Tours</h2>
             <p className="section-subtitle">Explore the world's most amazing destinations</p>
-            <Link to="/international" className="view-all">View All Countries <ArrowRight size={18} /></Link>
           </motion.div>
 
           <div className="destinations-grid">
@@ -237,6 +244,15 @@ const Home = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.div 
+            className="view-all-wrapper"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Link to="/international" className="view-all">View All Countries <ArrowRight size={18} /></Link>
+          </motion.div>
         </div>
       </section>
 

@@ -300,6 +300,12 @@
   gap: 12px;
 }
 
+.view-all-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
 .destinations-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -402,12 +408,20 @@
   background: var(--bg-secondary);
 }
 
+/* Dark theme - Full black background for destinations */
+[data-theme="dark"] .destinations {
+  background: #000000;
+}
 
 /* Tips Section - Bento Grid Design */
 .tips {
   background: linear-gradient(180deg, var(--bg-primary) 0%, #0a0a0f 100%);
   position: relative;
   overflow: hidden;
+}
+
+[data-theme="dark"] .tips {
+  background: #000000;
 }
 
 [data-theme="light"] .tips {
