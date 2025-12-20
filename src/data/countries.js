@@ -1,6 +1,5 @@
 export const continents = [
-  { id: 'asia', name: 'Asia', icon: '🌏' },
-  { id: 'islands', name: 'Islands', icon: '🏝️' },
+  
 ]
 
 export const countries = [
@@ -10,14 +9,14 @@ export const countries = [
     image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800', 
     description: 'Luxury destination with futuristic skyline, desert adventures, and world-class shopping.', 
     attractions: [
-      { name: 'Dubai', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400', usp: 'Futuristic city with world\'s tallest buildings & luxury malls' },
+      { name: 'Dubai Mall', image: '/public/international/dubai/dubaimall.jpg', usp: 'Futuristic city with world\'s tallest buildings & luxury malls' },
       { name: 'Abu Dhabi', image: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=400', usp: 'Capital with Sheikh Zayed Mosque & Louvre museum' },
       { name: 'Burj Khalifa', image: 'https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?w=400', usp: 'World\'s tallest building at 828m with stunning views' },
       { name: 'Palm Jumeirah', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400', usp: 'Man-made island with luxury resorts & Atlantis' },
       { name: 'Desert Safari', image: 'https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?w=400', usp: 'Dune bashing, camel rides & Bedouin camp experience' }
     ],
     gallery: [
-      'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800',
+      'https://images.unsplash.com/photo-1512453979798you-5ea266f8880c?w=800',
       'https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?w=800',
       'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800',
       'https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?w=800'

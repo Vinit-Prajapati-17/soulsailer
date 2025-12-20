@@ -190,7 +190,7 @@ export const indianStates = [
     capital: 'Hyderabad', 
     bestTime: 'October to February', 
     image: '/soulsailer/Famous Places/telangana/charminar.jpg',
-    bannerImage: `${BASE_URL}Banner/TL.jpg`,
+    bannerImage: `${BASE_URL}Banner/Telangana.png`,
     description: 'City of Pearls with Charminar and rich Nizami heritage.',
     attractions: ['Hyderabad', 'Charminar', 'Golconda Fort', 'Ramoji Film City', 'Warangal'],
     gallery: [
