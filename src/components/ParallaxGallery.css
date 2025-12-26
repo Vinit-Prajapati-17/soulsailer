@@ -1,0 +1,153 @@
+.parallax-gallery-section {
+  background: var(--bg-primary);
+  overflow: hidden;
+  padding: 80px 0 0;
+}
+
+.parallax-header {
+  text-align: center;
+  padding: 0 20px 40px;
+}
+
+.parallax-gallery-container {
+  position: relative;
+  display: flex;
+  gap: 2vw;
+  padding: 2vw;
+  height: 175vh;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.parallax-column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  width: 25%;
+  min-width: 200px;
+  height: 100%;
+}
+
+.parallax-column-1 {
+  top: -45%;
+}
+
+.parallax-column-2 {
+  top: -95%;
+}
+
+.parallax-column-3 {
+  top: -45%;
+}
+
+.parallax-column-4 {
+  top: -75%;
+}
+
+.parallax-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.parallax-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  transition: transform 0.5s ease;
+}
+
+.parallax-image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .parallax-gallery-container {
+    height: 150vh;
+  }
+  
+  .parallax-column {
+    min-width: 150px;
+  }
+  
+  .parallax-image-wrapper {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .parallax-gallery-section {
+    padding: 40px 0 0;
+  }
+  
+  .parallax-header {
+    padding: 0 15px 20px;
+  }
+  
+  .parallax-gallery-container {
+    height: auto;
+    min-height: 60vh;
+    gap: 8px;
+    padding: 8px;
+  }
+  
+  .parallax-gallery-container.mobile-view {
+    justify-content: center;
+  }
+  
+  .parallax-gallery-container.mobile-view .parallax-column {
+    width: 48%;
+    min-width: unset;
+    height: auto;
+  }
+  
+  .parallax-column {
+    gap: 8px;
+    min-width: 100px;
+    height: auto;
+  }
+  
+  .parallax-image-wrapper {
+    min-height: 140px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .parallax-column-1,
+  .parallax-column-2,
+  .parallax-column-3,
+  .parallax-column-4 {
+    top: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .parallax-gallery-section {
+    padding: 30px 0 0;
+  }
+  
+  .parallax-header {
+    padding: 0 10px 15px;
+  }
+  
+  .parallax-gallery-container {
+    min-height: 50vh;
+    gap: 6px;
+    padding: 6px;
+  }
+  
+  .parallax-image-wrapper {
+    min-height: 120px;
+    border-radius: 6px;
+  }
+  
+  .parallax-column {
+    gap: 6px;
+  }
+}

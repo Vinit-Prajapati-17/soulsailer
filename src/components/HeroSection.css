@@ -1,0 +1,34 @@
+/* Hero Parallax Hover Effects - Optimized for performance */
+.card-overlay,
+.card-title {
+  transition: opacity 0.3s ease;
+  will-change: opacity;
+  backface-visibility: hidden;
+}
+
+a:hover .card-overlay {
+  opacity: 1 !important;
+}
+
+a:hover .card-title {
+  opacity: 1 !important;
+}
+
+/* Performance optimizations for hero parallax */
+.hero-parallax-container {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.hero-parallax-row {
+  transform: translateZ(0);
+  will-change: transform;
+  contain: layout style paint;
+}
+
+.hero-parallax-card {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
