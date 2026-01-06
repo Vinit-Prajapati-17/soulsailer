@@ -56,7 +56,7 @@ const Footer = () => {
               <ul>
                 <li>
                   <MapPin size={18} />
-                  <span>Ahmedabad, Gujarat, India</span>
+                  <span>Vadodara, Gujarat, India</span>
                 </li>
                 <li>
                   <Phone size={18} />
@@ -76,8 +76,8 @@ const Footer = () => {
         <div className="container">
           <p>&copy; {new Date().getFullYear()} SoulSailers. All rights reserved.</p>
           <div className="footer-bottom-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms & Conditions</Link>
           </div>
         </div>
       </div>

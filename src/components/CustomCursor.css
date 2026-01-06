@@ -1,0 +1,95 @@
+/* Custom Cursor - Airplane Theme */
+
+/* Hide default cursor */
+.custom-cursor-active * {
+  cursor: none !important;
+}
+
+/* Cursor Wrapper */
+.custom-cursor-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-cursor-wrapper.visible {
+  opacity: 1;
+}
+
+/* Airplane Cursor */
+.cursor-plane {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  transform: translate(-2px, -2px);
+  pointer-events: none;
+  z-index: 100001;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  color: var(--orange);
+  filter: drop-shadow(0 2px 4px rgba(245, 166, 35, 0.4));
+}
+
+.cursor-plane.hovering {
+  transform: translate(-2px, -2px) scale(1.3);
+  filter: drop-shadow(0 4px 8px rgba(245, 166, 35, 0.6));
+}
+
+.cursor-plane.clicking {
+  transform: translate(-2px, -2px) scale(0.9);
+}
+
+.plane-icon {
+  width: 100%;
+  height: 100%;
+}
+
+/* Trail Effect */
+.cursor-trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--orange);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 100000;
+  opacity: 0.4;
+  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.cursor-trail.hovering {
+  width: 40px;
+  height: 40px;
+  opacity: 0.15;
+  border: 2px solid var(--orange);
+  background: transparent;
+}
+
+.cursor-trail.clicking {
+  width: 6px;
+  height: 6px;
+  opacity: 0.6;
+}
+
+/* Light theme */
+[data-theme="light"] .cursor-plane {
+  filter: drop-shadow(0 2px 4px rgba(245, 166, 35, 0.5));
+}
+
+/* Hide on mobile */
+@media (hover: none) and (pointer: coarse),
+(max-width: 768px) {
+  .custom-cursor-wrapper {
+    display: none !important;
+  }
+  
+  .custom-cursor-active * {
+    cursor: auto !important;
+  }
+}

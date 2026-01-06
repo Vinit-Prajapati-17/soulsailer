@@ -22,18 +22,9 @@ const India = () => {
       {/* Hero */}
       <section className="page-hero">
         <div className="page-hero-bg">
-          <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1600" alt="India" />
+          <img src={`${import.meta.env.BASE_URL}india-banner.jpg`} alt="India" />
           <div className="page-hero-overlay"></div>
         </div>
-        <motion.div 
-          className="page-hero-content"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1>Explore India</h1>
-          <p>Discover the incredible diversity of 28 states and 8 union territories</p>
-        </motion.div>
       </section>
 
       {/* Compact Filter Bar */}

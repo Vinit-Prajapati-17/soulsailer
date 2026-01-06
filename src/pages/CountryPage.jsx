@@ -73,7 +73,6 @@ const CountryPage = () => {
       <section className="country-hero">
         <div className="country-hero-bg">
           <img src={country.bannerImage || country.image} alt={country.name} />
-          <div className="country-hero-overlay"></div>
         </div>
         <motion.div 
           className="country-hero-content"
@@ -83,14 +82,6 @@ const CountryPage = () => {
           <Link to="/international" className="back-link">
             <ArrowLeft size={18} /> Back to International
           </Link>
-          <div className="country-badge">{continent?.icon} {continent?.name}</div>
-          <h1>{country.name}</h1>
-          <p>{country.description}</p>
-          <div className="country-quick-info">
-            <span><MapPin size={18} /> {country.capital}</span>
-            <span><Calendar size={18} /> {country.bestTime}</span>
-            <span><DollarSign size={18} /> {country.costRange}</span>
-          </div>
         </motion.div>
       </section>
 
@@ -118,13 +109,6 @@ const CountryPage = () => {
                   <div>
                     <h4>Best Time to Visit</h4>
                     <p>{country.bestTime}</p>
-                  </div>
-                </div>
-                <div className="info-card">
-                  <DollarSign className="info-icon" />
-                  <div>
-                    <h4>Budget Range</h4>
-                    <p>{country.costRange}</p>
                   </div>
                 </div>
                 <div className="info-card">

@@ -356,19 +356,11 @@ export const ProductCard = React.memo(({ product, translate, isMobile }) => {
         overflow: "hidden",
         willChange: "transform",
         backfaceVisibility: "hidden",
-      }}
-      whileHover={{
-        y: isMobile ? -5 : -10,
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 400,
-        damping: 25,
+        pointerEvents: "none",
       }}
       key={product.title}
     >
-      <a
-        href={product.link}
+      <div
         style={{
           display: "block",
           position: "relative",
@@ -395,36 +387,7 @@ export const ProductCard = React.memo(({ product, translate, isMobile }) => {
           loading="lazy"
           decoding="async"
         />
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            height: "100%",
-            width: "100%",
-            opacity: 0,
-            background: "linear-gradient(to top, rgba(0,0,0,0.8), transparent)",
-            pointerEvents: "none",
-            transition: "opacity 0.3s ease",
-            borderRadius: isMobile ? "10px" : "12px",
-          }}
-          className="card-overlay"
-        />
-        <h2
-          style={{
-            position: "absolute",
-            bottom: isMobile ? "8px" : "12px",
-            left: isMobile ? "8px" : "12px",
-            opacity: 0,
-            color: "white",
-            fontSize: isMobile ? "0.85rem" : "1rem",
-            fontWeight: 600,
-            transition: "opacity 0.3s ease",
-          }}
-          className="card-title"
-        >
-          {product.title}
-        </h2>
-      </a>
+      </div>
     </motion.div>
   );
 });

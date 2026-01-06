@@ -511,8 +511,8 @@ const Home = () => {
           <div className="testimonials-grid">
             {[
               { name: 'Priya Sharma', location: 'Mumbai', text: 'SoulSailers made our Rajasthan trip absolutely magical. The itinerary was perfect!', rating: 5 },
-              { name: 'Rahul Verma', location: 'Delhi', text: 'Best travel planning experience. The Kerala backwaters trip was unforgettable.', rating: 5 },
-              { name: 'Anita Patel', location: 'Bangalore', text: 'Detailed itineraries with local tips made our Switzerland trip hassle-free.', rating: 5 },
+              { name: 'Rahul Dave', location: 'Surat', text: 'Best travel planning experience. The Kerala backwaters trip was unforgettable.', rating: 5 },
+              { name: 'Anita Patel', location: 'Ahmedabad', text: 'Detailed itineraries with local tips made our Vietnam trip hassle-free.', rating: 5 },
             ].map((testimonial, index) => (
               <motion.div 
                 key={index}

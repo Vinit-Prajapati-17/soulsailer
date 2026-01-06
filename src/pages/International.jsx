@@ -17,31 +17,28 @@ const International = () => {
       {/* Hero */}
       <section className="page-hero">
         <div className="page-hero-bg">
-          <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1600" alt="International" />
+          <img src= {`${import.meta.env.BASE_URL}int-banner.jpg`} alt="International" />
           <div className="page-hero-overlay"></div>
         </div>
-        <motion.div 
-          className="page-hero-content"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1>International Tours</h1>
-          <p>Explore the world's most amazing destinations</p>
-        </motion.div>
       </section>
 
       {/* Search */}
       <section className="search-section">
         <div className="container">
-          <div className="search-bar">
-            <Search size={20} />
-            <input 
-              type="text"
-              placeholder="Search countries..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
+          <div className="search-wrapper">
+            <div className="search-header-left">
+              <h1>International Tours</h1>
+              <p>Explore the world's most amazing destinations</p>
+            </div>
+            <div className="search-bar">
+              <Search size={20} />
+              <input 
+                type="text"
+                placeholder="Search countries..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
           </div>
         </div>
       </section>

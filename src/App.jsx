@@ -6,6 +6,7 @@ import SocialButtons from './components/SocialButtons'
 import ScrollToTop from './components/ScrollToTop'
 import Preloader from './components/Preloader'
 import PageLoader from './components/PageLoader'
+import CustomCursor from './components/CustomCursor'
 import Home from './pages/Home'
 import India from './pages/India'
 import StatePage from './pages/StatePage'
@@ -14,6 +15,8 @@ import CountryPage from './pages/CountryPage'
 import Itineraries from './pages/Itineraries'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Terms from './pages/Terms'
+import Privacy from './pages/Privacy'
 import './App.css'
 
 function App() {
@@ -62,7 +65,8 @@ function App() {
     <>
       {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
       {!isLoading && <PageLoader />}
-      <div className="app" style={{ display: isLoading ? 'none' : 'block' }}>
+      {!isLoading && <CustomCursor />}
+      <div className={`app ${!isLoading ? 'custom-cursor-active' : ''}`} style={{ display: isLoading ? 'none' : 'block' }}>
         {scrollSystemReady && (
           <>
             <Navbar theme={theme} toggleTheme={toggleTheme} />
@@ -76,6 +80,8 @@ function App() {
                 <Route path="/itineraries" element={<Itineraries />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/privacy" element={<Privacy />} />
               </Routes>
             </main>
             <Footer />

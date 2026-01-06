@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Mail } from 'lucide-react';
 
-const TeamCard = ({ name, role, about, image, email, social }) => {
+const TeamCard = ({ name, role, about, image, email, social, whatsapp }) => {
+  const handleWhatsApp = () => {
+    if (whatsapp) {
+      const cleanNumber = whatsapp.replace(/\D/g, '');
+      window.open(`https://wa.me/${cleanNumber}`, '_blank');
+    }
+  };
+
   return (
     <StyledWrapper>
       <div className="card">
-        <button className="mail" onClick={() => email && window.open(`mailto:${email}`)}>
-          <Mail size={20} />
-        </button>
         <div className="profile-pic">
           {image ? (
             <img src={image} alt={name} />
@@ -34,23 +37,17 @@ const TeamCard = ({ name, role, about, image, email, social }) => {
                   </svg>
                 </a>
               )}
-              {social?.twitter && (
-                <a href={social.twitter} target="_blank" rel="noopener noreferrer">
+              {social?.linkedin && (
+                <a href={social.linkedin} target="_blank" rel="noopener noreferrer">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
-                  </svg>
-                </a>
-              )}
-              {social?.github && (
-                <a href={social.github} target="_blank" rel="noopener noreferrer">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-                    <path d="M9 18c-4.51 2-5-2-7-2"/>
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect width="4" height="12" x="2" y="9"/>
+                    <circle cx="4" cy="4" r="2"/>
                   </svg>
                 </a>
               )}
             </div>
-            <button className="button" onClick={() => email && window.open(`mailto:${email}`)}>
+            <button className="button" onClick={handleWhatsApp}>
               Contact Me
             </button>
           </div>
@@ -62,14 +59,14 @@ const TeamCard = ({ name, role, about, image, email, social }) => {
 
 const StyledWrapper = styled.div`
   .card {
-    width: 280px;
-    height: 280px;
+    width: 380px;
+    height: 380px;
     background: var(--bg-card, #ffffff);
     border-radius: 32px;
     padding: 3px;
     position: relative;
     box-shadow: var(--shadow-card, 0 8px 30px rgba(0, 119, 182, 0.15));
-    transition: all var(--transition-normal, 0.3s ease);
+    transition: all 0.5s ease;
     border: 1px solid var(--border-color, #e2e8f0);
   }
 
@@ -104,7 +101,7 @@ const StyledWrapper = styled.div`
     z-index: 1;
     border: 0px solid var(--primary-blue, #0077B6);
     overflow: hidden;
-    transition: all var(--transition-normal, 0.3s ease) 0.2s, z-index var(--transition-normal, 0.3s ease) 0.2s;
+    transition: all 0.6s ease 0.1s, z-index 0.6s ease 0.1s;
   }
 
   .card .profile-pic img {
@@ -134,12 +131,12 @@ const StyledWrapper = styled.div`
     left: 3px;
     right: 3px;
     background: var(--primary-blue, #0077B6);
-    top: 80%;
+    top: 81.5%;
     border-radius: 29px;
     z-index: 2;
     box-shadow: 0px 5px 5px 0px rgba(0, 119, 182, 0.2) inset;
     overflow: hidden;
-    transition: all var(--transition-normal, 0.3s ease) cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+    transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 
   .card .bottom .content {
@@ -147,22 +144,24 @@ const StyledWrapper = styled.div`
     bottom: 0;
     left: 1.5rem;
     right: 1.5rem;
-    height: 160px;
+    height: 220px;
   }
 
   .card .bottom .content .name {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--white, #ffffff);
     font-weight: 600;
+    transition: font-size 0.5s ease;
   }
 
   .card .bottom .content .about-me {
     display: block;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: rgba(255, 255, 255, 0.9);
     margin-top: 1rem;
     line-height: 1.4;
+    transition: font-size 0.5s ease;
   }
 
   .card .bottom .bottom-bottom {
@@ -178,6 +177,7 @@ const StyledWrapper = styled.div`
   .card .bottom .bottom-bottom .social-links-container {
     display: flex;
     gap: 1rem;
+    align-items: center;
   }
 
   .card .bottom .bottom-bottom .social-links-container a {
@@ -186,7 +186,7 @@ const StyledWrapper = styled.div`
     justify-content: center;
     width: 32px;
     height: 32px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     transition: all var(--transition-fast, 0.2s ease);
     text-decoration: none;
@@ -201,7 +201,7 @@ const StyledWrapper = styled.div`
   }
 
   .card .bottom .bottom-bottom .social-links-container a:hover {
-    background: var(--orange, #F5A623);
+    background: rgba(255, 255, 255, 0.35);
     transform: scale(1.1);
   }
 
@@ -234,20 +234,28 @@ const StyledWrapper = styled.div`
   .card:hover .bottom {
     top: 20%;
     border-radius: 80px 29px 29px 29px;
-    transition: all var(--transition-normal, 0.3s ease) cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+    transition: all 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
+  }
+
+  .card:hover .bottom .content .name {
+    font-size: 1.6rem;
+  }
+
+  .card:hover .bottom .content .about-me {
+    font-size: 1.1rem;
   }
 
   .card:hover .profile-pic {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     aspect-ratio: 1;
     top: 10px;
     left: 10px;
     border-radius: 50%;
     z-index: 3;
-    border: 7px solid var(--primary-blue, #0077B6);
+    border: 4px solid var(--primary-blue, #0077B6);
     box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.15));
-    transition: all var(--transition-normal, 0.3s ease), z-index var(--transition-normal, 0.3s ease) 0.1s;
+    transition: all 0.6s ease, z-index 0.6s ease 0.1s;
   }
 
   .card:hover .profile-pic:hover {
@@ -268,8 +276,28 @@ const StyledWrapper = styled.div`
   /* Responsive Design */
   @media (max-width: 768px) {
     .card {
-      width: 260px;
-      height: 260px;
+      width: 340px;
+      height: 340px;
+    }
+
+    .card .bottom .content .name {
+      font-size: 1.2rem;
+    }
+
+    .card .bottom .content .about-me {
+      font-size: 0.9rem;
+    }
+
+    .card .bottom .bottom-bottom .button {
+      font-size: 0.7rem;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      width: 300px;
+      height: 300px;
     }
 
     .card .bottom .content .name {
@@ -278,26 +306,6 @@ const StyledWrapper = styled.div`
 
     .card .bottom .content .about-me {
       font-size: 0.85rem;
-    }
-
-    .card .bottom .bottom-bottom .button {
-      font-size: 0.65rem;
-      padding: 0.4rem 0.8rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .card {
-      width: 240px;
-      height: 240px;
-    }
-
-    .card .bottom .content .name {
-      font-size: 1rem;
-    }
-
-    .card .bottom .content .about-me {
-      font-size: 0.8rem;
     }
   }
 `;

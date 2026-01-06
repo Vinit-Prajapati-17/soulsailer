@@ -1,9 +1,31 @@
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Users, Award, Globe, Heart, Target, Eye, MapPin, Plane } from 'lucide-react'
+import { Users, Award, Globe, Heart, Target, Eye, MapPin } from 'lucide-react'
 import TeamCard from '../components/TeamCard'
 import './About.css'
 
 const About = () => {
+  const [theme, setTheme] = useState('dark')
+
+  useEffect(() => {
+    // Get initial theme
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark'
+    setTheme(currentTheme)
+
+    // Watch for theme changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'data-theme') {
+          const newTheme = document.documentElement.getAttribute('data-theme') || 'dark'
+          setTheme(newTheme)
+        }
+      })
+    })
+
+    observer.observe(document.documentElement, { attributes: true })
+    return () => observer.disconnect()
+  }, [])
+
   const stats = [
     { number: '50+', label: 'Destinations', icon: <MapPin /> },
     { number: '200+', label: 'Itineraries', icon: <Globe /> },
@@ -19,41 +41,39 @@ const About = () => {
   ]
 
   const team = [
-    { 
-      name: 'xyz', 
-      role: 'Founder & CEO', 
-      about: 'Passionate traveler with 10+ years of experience exploring India and beyond. Believes in creating transformative travel experiences.',
-      image: 'https://images',
-      email: 'rajesh@soulsailers.com',
+    {
+      name: 'Keval Patel',
+      role: 'Managing Director',
+      about: 'Managing Director. Leads the overall direction and strategy of the business.Makes key decisions and guides the team to achieve goals.',
+      image: `${import.meta.env.BASE_URL}keval.jpg`,
+      whatsapp: "https://wa.me/917878125009",
       social: {
-        instagram: 'https://instagram.com/rajeshkumar',
-        twitter: 'https://twitter.com/rajeshkumar',
-        github: 'https://github.com/rajeshkumar'
+        instagram: 'https://www.instagram.com/kevu4293?igsh=MTBsYXAzdG5rb2hnbw==',
+        linkedin: 'https://www.linkedin.com/in/keval-godhaniya/'
       }
     },
-    { 
-      name: 'zyz', 
-      role: 'Head of Operations', 
-      about: 'Expert in travel logistics and customer experience. Ensures every journey is seamlessly planned and executed.',
-      image: 'https://images',
-      email: 'priya@soulsailers.com',
+    {
+      name: 'Rutvi Satasiya',
+      role: 'Marketing Director',
+      about: 'Marketing Director. Creates and drives marketing strategies to build brand awareness and attract customers.',
+      image: `${import.meta.env.BASE_URL}rutvi.JPG`,
+      whatsapp: "https://wa.me/919723246181",
       social: {
-        instagram: 'https://instagram.com/priyasharma',
-        twitter: 'https://twitter.com/priyasharma'
+        instagram: 'https://www.instagram.com/rutu__2708?igsh=MXN4dzYwa3FpYWtldQ==',
+        linkedin: 'https://www.linkedin.com/in/rutvi-vekariya-b98972170/'
       }
     },
-    { 
-      name: 'abc', 
-      role: 'Travel Expert', 
-      about: 'Local culture enthusiast and adventure seeker. Specializes in off-the-beaten-path destinations and authentic experiences.',
-      image: 'https://images',
-      email: 'arjun@soulsailers.com',
+    {
+      name: 'Jatin Kateliya',
+      role: 'Marketing Director',
+      about: 'Marketing Director. Leads the marketing team and oversees campaigns to support business growth.',
+      image: `${import.meta.env.BASE_URL}jatin.jpg`,
+      whatsapp: "https://wa.me/919773154466",
       social: {
-        instagram: 'https://instagram.com/arjunpatel',
-        twitter: 'https://twitter.com/arjunpatel',
-        github: 'https://github.com/arjunpatel'
+        instagram: 'https://www.instagram.com/jatin_kateliya_06?igsh=d2ppMWgwaWc4OXBq',
+        linkedin: 'https://www.linkedin.com/in/jatin-kateliya-018908216/'
       }
-    },
+    }
   ]
 
   return (
@@ -88,7 +108,7 @@ const About = () => {
               <h2>Our Story</h2>
               <p>
                 SoulSailers was born from a simple belief: travel planning should be as exciting 
-                as the journey itself. Founded in 2019, we set out to create a platform that 
+                as the journey itself. Founded in 2024, we set out to create a platform that 
                 combines expert knowledge with local insights to help travelers discover the 
                 world's most incredible destinations.
               </p>
@@ -111,13 +131,10 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <video 
-                src={`${import.meta.env.BASE_URL}Picture.mp4`}
-                autoPlay 
-                loop 
-                muted 
-                playsInline
-                className="story-video"
+              <img 
+                src={theme === 'light' ? `${import.meta.env.BASE_URL}White logo.png` : `${import.meta.env.BASE_URL}logo.png`}
+                alt="Our Story"
+                className="story-img"
               />
 
             </motion.div>
@@ -208,6 +225,7 @@ const About = () => {
                   about={member.about}
                   image={member.image}
                   email={member.email}
+                  whatsapp={member.whatsapp}
                   social={member.social}
                 />
               </motion.div>
