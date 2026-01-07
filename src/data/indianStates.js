@@ -26,16 +26,16 @@ export const indianStates = [
     region: 'North', 
     capital: 'Shimla', 
     bestTime: 'March to June', 
-    image: '/soulsailer/Famous Places/Himachal/Shimla.jpg',
+    image: '/soulsailer/Famous Places/Himachal/Shimlaa.jpg',
     bannerImage: `${BASE_URL}Banner/himachal.jpg`,
     description: 'Land of gods with beautiful hill stations and adventure sports.',
     attractions: ['Shimla', 'Manali', 'Dharamshala', 'Kasol', 'Spiti Valley'],
     gallery: [
-      '/soulsailer/Famous Places/Himachal/Shimla.jpg',
-      '/soulsailer/Famous Places/Himachal/Manali.jpg',
-      '/soulsailer/Famous Places/Himachal/Dharamshala.jpg',
-      '/soulsailer/Famous Places/Himachal/Kasol.jpg',
-      '/soulsailer/Famous Places/Himachal/Spiti.jpg'
+      '/soulsailer/Famous Places/Himachal/Shimlaa.jpg',
+      '/soulsailer/Famous Places/Himachal/Manalii.jpg',
+      '/soulsailer/Famous Places/Himachal/Dharamshalaa.jpg',
+      '/soulsailer/Famous Places/Himachal/Kasoll.jpg',
+      '/soulsailer/Famous Places/Himachal/Spitii.jpg'
     ]
   },
   { 

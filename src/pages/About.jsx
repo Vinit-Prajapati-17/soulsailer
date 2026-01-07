@@ -42,10 +42,10 @@ const About = () => {
 
   const team = [
     {
-      name: 'Keval Patel',
+      name: 'Keval Godhaniya',
       role: 'Managing Director',
-      about: 'Managing Director. Leads the overall direction and strategy of the business.Makes key decisions and guides the team to achieve goals.',
-      image: `${import.meta.env.BASE_URL}keval.jpg`,
+      about: 'Managing Director. Leads the overall direction and strategy of the business. Makes key decisions and guides the team to achieve goals.',
+      image: `${import.meta.env.BASE_URL}keval.jpeg`,
       whatsapp: "https://wa.me/917878125009",
       social: {
         instagram: 'https://www.instagram.com/kevu4293?igsh=MTBsYXAzdG5rb2hnbw==',

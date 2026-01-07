@@ -116,11 +116,11 @@ const attractionData = {
   "Palolem Beach": { image: "/soulsailer/Famous Places/goa/palolem beach.jpg", usp: "Crescent-shaped paradise with silent discos & dolphin spotting" },
   
   // Himachal Pradesh
-  "Shimla": { image: "/soulsailer/Famous Places/Himachal/Shimla.jpg", usp: "Queen of Hills with colonial charm, Mall Road & toy train" },
-  "Manali": { image: "/soulsailer/Famous Places/Himachal/Manali.jpg", usp: "Adventure capital with Rohtang Pass, rafting & snow activities" },
-  "Dharamshala": { image: "/soulsailer/Famous Places/Himachal/Dharamshala.jpg", usp: "Little Lhasa with Dalai Lama residence & Tibetan culture" },
-  "Kasol": { image: "/soulsailer/Famous Places/Himachal/Kasol.jpg", usp: "Mini Israel with Parvati Valley treks & hippie vibes" },
-  "Spiti Valley": { image: "/soulsailer/Famous Places/Himachal/Spiti.jpg", usp: "Cold desert with ancient monasteries & surreal landscapes" },
+  "Shimla": { image: "/soulsailer/Famous Places/Himachal/Shimlaa.jpg", usp: "Queen of Hills with colonial charm, Mall Road & toy train" },
+  "Manali": { image: "/soulsailer/Famous Places/Himachal/Manalii.jpg", usp: "Adventure capital with Rohtang Pass, rafting & snow activities" },
+  "Dharamshala": { image: "/soulsailer/Famous Places/Himachal/Dharamshalaa.jpg", usp: "Little Lhasa with Dalai Lama residence & Tibetan culture" },
+  "Kasol": { image: "/soulsailer/Famous Places/Himachal/Kasoll.jpg", usp: "Mini Israel with Parvati Valley treks & hippie vibes" },
+  "Spiti Valley": { image: "/soulsailer/Famous Places/Himachal/Spitii.jpg", usp: "Cold desert with ancient monasteries & surreal landscapes" },
   
   // Uttarakhand
   "Rishikesh": { image: "/soulsailer/Famous Places/UK/Rishikesh.jpg", usp: "Yoga capital of world with Ganga Aarti & adventure sports" },

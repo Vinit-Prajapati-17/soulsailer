@@ -81,7 +81,7 @@ const Contact = () => {
   const contactInfo = [
     { icon: <MapPin />, title: 'Visit Us', info: 'Vadodara, Gujarat, India' },
     { icon: <Phone />, title: 'Call Us', info: '+91 7878125009' },
-    { icon: <Mail />, title: 'Email Us', info: 'soulsailer2025@gmail.com' },
+    { icon: <Mail />, title: 'Email Us', info: 'info@soulsailer.in' },
     { icon: <Clock />, title: 'Working Hours', info: 'Mon - Sat: 9:00 AM - 7:00 PM' },
   ]
 

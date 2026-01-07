@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { motion, useMotionValue } from 'framer-motion'
 import './CustomCursor.css'
 
 const CustomCursor = () => {
@@ -10,11 +10,6 @@ const CustomCursor = () => {
   
   const cursorX = useMotionValue(-100)
   const cursorY = useMotionValue(-100)
-  
-  // Smooth spring animation
-  const springConfig = { damping: 20, stiffness: 300, mass: 0.5 }
-  const cursorXSpring = useSpring(cursorX, springConfig)
-  const cursorYSpring = useSpring(cursorY, springConfig)
 
   useEffect(() => {
     // Check if device has touch capability
@@ -63,8 +58,8 @@ const CustomCursor = () => {
     document.addEventListener('mouseenter', handleMouseEnter)
     document.addEventListener('mouseleave', handleMouseLeave)
 
-    // Initial visibility after a short delay
-    setTimeout(() => setIsVisible(true), 100)
+    // Show cursor immediately
+    setIsVisible(true)
 
     addHoverListeners()
     
@@ -92,8 +87,8 @@ const CustomCursor = () => {
       <motion.div
         className={`cursor-plane ${isHovering ? 'hovering' : ''} ${isClicking ? 'clicking' : ''}`}
         style={{
-          x: cursorXSpring,
-          y: cursorYSpring,
+          x: cursorX,
+          y: cursorY,
         }}
       >
         <svg 
@@ -119,8 +114,8 @@ const CustomCursor = () => {
       <motion.div
         className={`cursor-trail ${isHovering ? 'hovering' : ''} ${isClicking ? 'clicking' : ''}`}
         style={{
-          x: cursorXSpring,
-          y: cursorYSpring,
+          x: cursorX,
+          y: cursorY,
         }}
       />
     </div>

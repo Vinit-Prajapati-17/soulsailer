@@ -20,7 +20,7 @@ const SocialButtons = () => {
         <Instagram size={24} />
       </a>
       <a 
-        href="https://wa.me/917878125009"
+        href="https://wa.me/919974787434"
         target="_blank" 
         rel="noopener noreferrer"
         className="social-btn whatsapp"

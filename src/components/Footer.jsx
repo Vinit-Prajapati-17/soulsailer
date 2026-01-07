@@ -60,11 +60,11 @@ const Footer = () => {
                 </li>
                 <li>
                   <Phone size={18} />
-                  <span>+91 78781 25009</span>
+                  <span>+91 99747 87434</span>
                 </li>
                 <li>
                   <Mail size={18} />
-                  <span>soulsailer2025@gmail.com</span>
+                  <span>info@soulsailer.in</span>
                 </li>
               </ul>
             </div>

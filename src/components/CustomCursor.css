@@ -15,7 +15,6 @@
   pointer-events: none;
   z-index: 99999;
   opacity: 0;
-  transition: opacity 0.3s ease;
 }
 
 .custom-cursor-wrapper.visible {
@@ -30,7 +29,6 @@
   transform: translate(-2px, -2px);
   pointer-events: none;
   z-index: 100001;
-  transition: transform 0.2s ease, filter 0.2s ease;
   color: #F5A623;
   filter: drop-shadow(0 2px 4px rgba(245, 166, 35, 0.4));
 }
@@ -60,7 +58,6 @@
   pointer-events: none;
   z-index: 100000;
   opacity: 0.4;
-  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
 }
 
 .cursor-trail.hovering {

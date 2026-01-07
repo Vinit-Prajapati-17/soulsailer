@@ -2632,3 +2632,59 @@
 [data-theme="light"] .cta h2 {
   color: #4A90E2;
 }
+
+
+/* Our Clients Section */
+.our-clients {
+  overflow: hidden;
+  background: #000000;
+}
+
+[data-theme="light"] .our-clients {
+  background: var(--bg-primary);
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px 140px;
+  max-width: 1300px;
+  margin: 50px auto 0;
+  padding: 30px 60px;
+  justify-items: center;
+}
+
+.client-logo-img {
+  width: 100%;
+  max-width: 250px;
+  height: 150px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.client-logo-img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 80px;
+  }
+  
+  .client-logo-img {
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 50px;
+  }
+  
+  .client-logo-img {
+    height: 80px;
+  }
+}

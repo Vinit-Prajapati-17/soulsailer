@@ -40,6 +40,25 @@ DestinationCard.displayName = 'DestinationCard';
 const Home = () => {
   const [heroReady, setHeroReady] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
+  const [theme, setTheme] = useState('dark');
+  
+  // Theme detection
+  useEffect(() => {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    setTheme(currentTheme);
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'data-theme') {
+          const newTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+          setTheme(newTheme);
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, { attributes: true });
+    return () => observer.disconnect();
+  }, []);
   
   // Memoize expensive calculations
   const featuredIndian = React.useMemo(() => {
@@ -371,6 +390,39 @@ const Home = () => {
           >
             <Link to="/international" className="view-all">View All Countries <ArrowRight size={18} /></Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Our Clients Section */}
+      <section className="destinations section our-clients">
+        <div className="container">
+          <motion.div 
+            className="section-header"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="section-title">Our <span className="gradient-text">Clients</span></h2>
+            <p className="section-subtitle">Trusted by travelers from around the world</p>
+          </motion.div>
+
+          <div className="clients-grid">
+            {[
+              { name: 'Elysia', logo: `${BASE_URL}CLIENT/6.jpg` },
+              { name: 'PGM', logo: theme === 'light' ? `${BASE_URL}CLIENT/1-1.png` : `${BASE_URL}CLIENT/1.png` },
+              { name: 'Mazic', logo: theme === 'light' ? `${BASE_URL}CLIENT/2-1.png` : `${BASE_URL}CLIENT/2.png` },
+              { name: 'Opersoft', logo: `${BASE_URL}CLIENT/3.png` },
+              { name: 'Inventure', logo: `${BASE_URL}CLIENT/5-1.png` },
+              { name: 'Career', logo: `${BASE_URL}CLIENT/4.jpeg` }
+            ].map((client, index) => (
+              <img 
+                key={index} 
+                src={client.logo} 
+                alt={client.name} 
+                className="client-logo-img"
+              />
+            ))}
+          </div>
         </div>
       </section>
 
