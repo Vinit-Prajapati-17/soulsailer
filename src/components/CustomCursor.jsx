@@ -6,6 +6,7 @@ const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false)
   const [isClicking, setIsClicking] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
+  const [isTouchDevice, setIsTouchDevice] = useState(true)
   
   const cursorX = useMotionValue(-100)
   const cursorY = useMotionValue(-100)
@@ -17,8 +18,18 @@ const CustomCursor = () => {
 
   useEffect(() => {
     // Check if device has touch capability
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
-    if (isTouchDevice) {
+    const checkTouchDevice = () => {
+      const hasTouch = 'ontouchstart' in window || 
+                       navigator.maxTouchPoints > 0 ||
+                       window.matchMedia('(hover: none)').matches
+      const isMobile = window.innerWidth <= 768
+      return hasTouch && isMobile
+    }
+    
+    const isTouch = checkTouchDevice()
+    setIsTouchDevice(isTouch)
+    
+    if (isTouch) {
       setIsVisible(false)
       return
     }
@@ -52,6 +63,9 @@ const CustomCursor = () => {
     document.addEventListener('mouseenter', handleMouseEnter)
     document.addEventListener('mouseleave', handleMouseLeave)
 
+    // Initial visibility after a short delay
+    setTimeout(() => setIsVisible(true), 100)
+
     addHoverListeners()
     
     const observer = new MutationObserver(() => addHoverListeners())
@@ -67,7 +81,8 @@ const CustomCursor = () => {
     }
   }, [cursorX, cursorY, isVisible])
 
-  if (typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+  // Don't render on touch devices
+  if (isTouchDevice) {
     return null
   }
 
@@ -93,7 +108,7 @@ const CustomCursor = () => {
           />
           <path 
             d="M2 2L12 15" 
-            stroke="var(--bg-primary)" 
+            stroke="#0a0a0a" 
             strokeWidth="1.5"
             strokeLinecap="round"
           />
