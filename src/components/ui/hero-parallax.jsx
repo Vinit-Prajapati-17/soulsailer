@@ -172,14 +172,13 @@ export const HeroParallax = ({ products }) => {
       const initialRotateX = isMobile ? 10 : 15;
       const initialRotateZ = isMobile ? 10 : 20;
       const initialTranslateY = isMobile ? -400 : -700;
-      const initialOffset = isMobile ? 200 : 400;
       
       rotateX.set(initialRotateX);
       rotateZ.set(initialRotateZ);
       translateY.set(initialTranslateY);
       opacity.set(0.2);
-      translateX.set(initialOffset);
-      translateXReverse.set(-initialOffset);
+      translateX.set(1);
+      translateXReverse.set(1);
     }
   }, [isReady, scrollInitialized, isMobile, rotateX, rotateZ, translateY, opacity, translateX, translateXReverse]);
 
