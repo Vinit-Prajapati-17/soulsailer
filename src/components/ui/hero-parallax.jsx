@@ -137,12 +137,15 @@ export const HeroParallax = ({ products }) => {
 
   const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
 
+  // Initial offset for cards to start from the right position
+  const initialOffset = isMobile ? 200 : 400;
+
   const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, isMobile ? 500 : 1000]),
+    useTransform(scrollYProgress, [0, 1], [initialOffset, isMobile ? 500 + initialOffset : 1000 + initialOffset]),
     springConfig
   );
   const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, isMobile ? -500 : -1000]),
+    useTransform(scrollYProgress, [0, 1], [-initialOffset, isMobile ? -500 - initialOffset : -1000 - initialOffset]),
     springConfig
   );
   const rotateX = useSpring(
@@ -169,13 +172,14 @@ export const HeroParallax = ({ products }) => {
       const initialRotateX = isMobile ? 10 : 15;
       const initialRotateZ = isMobile ? 10 : 20;
       const initialTranslateY = isMobile ? -400 : -700;
+      const initialOffset = isMobile ? 200 : 400;
       
       rotateX.set(initialRotateX);
       rotateZ.set(initialRotateZ);
       translateY.set(initialTranslateY);
       opacity.set(0.2);
-      translateX.set(0);
-      translateXReverse.set(0);
+      translateX.set(initialOffset);
+      translateXReverse.set(-initialOffset);
     }
   }, [isReady, scrollInitialized, isMobile, rotateX, rotateZ, translateY, opacity, translateX, translateXReverse]);
 
